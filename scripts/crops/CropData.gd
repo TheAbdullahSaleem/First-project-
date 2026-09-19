@@ -9,5 +9,4 @@ extends Resource
 @export var can_mutate: bool = true # cursed crop
 
 # Sprite for each growth stage
-@export var stage_textures:
-	Array[Texture2D] = []
+@export var stage_textures: Array[Texture2D] = []

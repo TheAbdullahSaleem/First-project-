@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://eijxise53vdx"]
+
+[ext_resource type="Script" uid="uid://qb8hg4qh2lib" path="res://scripts/crops/Crop.gd" id="1_vfscn"]
+
+[node name="SoilTile" type="Node2D" unique_id=579594894]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2075368317]
+
+[node name="Area2D" type="Area2D" parent="." unique_id=511603673]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1988483769]
+
+[node name="Crop" type="Node2D" parent="." unique_id=1584161492]
+script = ExtResource("1_vfscn")
+metadata/_custom_type_script = "uid://qb8hg4qh2lib"

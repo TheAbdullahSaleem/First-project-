@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://qcomiwmyqvql"]
+
+[node name="Crop" type="Node2D" unique_id=289767440]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=634469242]
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1287896864]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=503131459]
+
+[node name="Label" type="Label" parent="." unique_id=724424556]
+offset_right = 40.0
+offset_bottom = 23.0

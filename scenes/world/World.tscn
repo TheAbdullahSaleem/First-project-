@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://dhv0iwhuhemvr"]
+
+[node name="World" type="Node2D" unique_id=222421646]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1432915480]
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=235724505]
