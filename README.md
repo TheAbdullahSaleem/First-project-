@@ -1,217 +1,144 @@
 # First-project-
 
-NAME: The Last Harvest
-GAME STRUCTURE
-Day 1
-You arrive at the farm.
-You have:
-3 seeds
-5 water
-100% health
-Your objective:
-"Harvest enough food to survive the night."
-You plant your crops.
-Explore the farm.
-Find resources.
-Eventually:
-SUNSET
+# The Last Harvest
+
+> A top-down pixel-art survival game about farming, resource management, and the consequences of what you choose to harvest.
+
+## 🎮 About the Game
+
+**The Last Harvest** is a 2D top-down survival and farming game built around a simple question:
+
+> **How much are you willing to take from the land to survive?**
+
+You arrive at an abandoned farm with limited resources. Your crops are your only source of food, but something beneath the farm is slowly coming back to life.
+
+Every harvest has a cost.
+
+Grow crops. Explore the farm. Gather resources. Survive the night.
+
+But be careful.
+
+**Something is coming.**
+
+---
+
+## 🌾 Core Gameplay
+
+The game combines a few simple mechanics:
+
+- Top-down player movement
+- Farming and crop growth
+- Resource gathering
+- Inventory management
+- Day/night cycle
+- Crop protection
+- Enemy AI
+- Soil health management
+- Player choices with consequences
+
+The goal is to keep the mechanics simple while making the player's decisions meaningful.
+
+---
+
+# 📖 Game Structure
+
+## Day 1 — The Arrival
+
+You arrive at the farm with limited supplies.
+
+### Starting Resources
+
+- 🌱 Seeds ×3
+- 💧 Water ×5
+- ❤️ Health: 100%
+
+### Objective
+
+> **"Harvest enough food to survive the night."**
+
+During the day, the player can:
+
+- Plant crops
+- Water crops
+- Explore the farm
+- Collect resources
+- Prepare for nightfall
+
+Eventually, the sun begins to set.
+
+### Sunset
+
 A message appears:
-Something is coming.
+
+> **Something is coming.**
+
 Night begins.
-A creature appears.
-You protect your crops.
-________________________________________
-Day 2
+
+A mysterious creature emerges and starts moving toward your crops.
+
+You must protect the farm until morning.
+
+---
+
+# 🌱 Day 2 — Something Has Changed
+
 The farm looks different.
+
 Some crops have grown.
-But one has become strange.
-A giant black root is growing underneath it.
-You can:
-A
-Harvest it.
-Get lots of food.
-But the root grows.
-B
-Destroy it.
-Lose the harvest.
-But the farm becomes safer.
-C
-Leave it.
+
+But one crop has changed.
+
+A giant black root has appeared beneath it.
+
+The player now has three choices.
+
+### A — Harvest
+
+Take the crop and receive a large amount of food.
+
+**Consequence:**
+
+The mysterious root grows stronger.
+
+### B — Destroy
+
+Destroy the crop and eliminate the immediate threat.
+
+**Consequence:**
+
+You lose the harvest, but the farm becomes safer.
+
+### C — Leave It
+
+Do nothing.
+
+**Consequence:**
+
 Nothing happens immediately.
-But something changes later.
-________________________________________
-🧠 Simple game mechanics
-You don't need complicated mechanics.
-Movement
-Top-down player movement.
-W
-↑
-A ← Player → D
-↓
-S
-Interaction
-Press E near objects.
+
+But the root continues to change the farm.
+
+Your decisions affect what happens later in the game.
+
+---
+
+# 🎮 Controls
+
+| Key | Action |
+|-----|--------|
+| `W` / `↑` | Move Up |
+| `A` / `←` | Move Left |
+| `S` / `↓` | Move Down |
+| `D` / `→` | Move Right |
+| `E` | Interact |
+
+### Interaction
+
+When standing near an interactable object:
+
+```text
 [E] Harvest
 [E] Water
 [E] Plant
-[E] Pick up
-Inventory
-Something extremely simple:
-┌─────────────────────┐
-│ INVENTORY            │
-│                     │
-│ 🌾 Wheat       x12   │
-│ 🌱 Seeds        x4   │
-│ 🪵 Wood         x8   │
-│ 🍎 Food         x6   │
-└─────────────────────┘
-Day/Night
-Simple timer:
-DAY 1
-
-☀️  08:00
-      ↓
-     12:00
-      ↓
-     18:00
-      ↓
-🌙 NIGHT
-You don't need real-time days. You can just make each day 2–3 minutes.
-________________________________________
-👾 The enemy
-Don't make 10 different enemies.
-Make one enemy.
-Call it:
-The Wither
-It appears at night.
-Its objective:
-Destroy your crops.
-The player can:
-•	Attack it 
-•	Run away 
-•	Build barriers 
-•	Protect crops 
-Simple AI:
-Find nearest crop
-        ↓
-Walk toward crop
-        ↓
-Attack crop
-        ↓
-If player attacks
-        ↓
-Chase player
-That's enough.
-________________________________________
-🌾 The actual "Harvest" mechanic
-This is where you can make your game stand out.
-Each crop has a Harvest Value.
-Example:
-Wheat
-Growth: ████████░░ 80%
-Value: 2
-
-Golden Wheat
-Growth: ██████████ 100%
-Value: 15
-But there's also:
-Soil Health
-SOIL HEALTH
-
-████████░░ 80%
-Harvesting repeatedly reduces soil health.
-If it reaches zero:
-Nothing grows.
-The player therefore has to decide:
-Do I harvest everything now?
-or
-Do I sacrifice today's food for tomorrow's harvest?
-That's directly connected to the theme.
-________________________________________
-Art direction
-Don't make it visually complicated.
-I'd go for:
-Top-down pixel art
-Something like:
-🌲 🌲 🌲 🌲 🌲 🌲
-
-🌲     🌾 🌾 🌾
-       🌾 🧑 🌾
-       🌾 🌾 🌾
-
-   🏠 FARM
-
-🌲 🌲 🌲 🌲 🌲
-You can divide your assets into:
-Environment
-•	Grass 
-•	Dirt 
-•	Water 
-•	Trees 
-•	Rocks 
-•	Fence 
-•	House 
-Crops
-•	Seed 
-•	Small crop 
-•	Medium crop 
-•	Mature crop 
-•	Harvested crop 
-Characters
-•	Player 
-•	Wither 
-UI
-•	Health 
-•	Food 
-•	Seeds 
-•	Day 
-•	Time 
-•	Soil health 
-That's a manageable asset list.
-________________________________________
-👥 Split the work between your team
-Since you're already using GitHub, I'd divide it cleanly:
-Person 1 — Player
-•	Movement 
-•	Animation 
-•	Collision 
-•	Interaction 
-Person 2 — Farming
-•	Planting 
-•	Growth 
-•	Watering 
-•	Harvesting 
-•	Inventory 
-Person 3 — World
-•	Map 
-•	Environment 
-•	Day/night 
-•	NPC/enemy 
-Person 4 — Game systems
-•	UI 
-•	Menus 
-•	Win/lose conditions 
-•	Sound 
-•	Game balancing 
-And keep everything merged into main through your Git workflow.
-________________________________________
-🏆 A really good ending
-After surviving several days, the player reaches the final harvest.
-The mysterious root underneath the farm finally reveals itself.
-The player discovers that the farm wasn't dying.
-It was being harvested by something else.
-The player gets one final choice:
-HARVEST
-Take everything.
-Huge score.
-The land dies.
-SACRIFICE
-Destroy the crops.
-The land survives.
-RESTORE
-Use all your accumulated resources to restore the soil.
-The farm comes back to life.
-Then show:
-THE HARVEST IS NOT WHAT YOU TAKE.
-IT'S WHAT YOU LEAVE BEHIND.
+[E] Pick Up
 
