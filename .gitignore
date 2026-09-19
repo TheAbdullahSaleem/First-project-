@@ -16,3 +16,9 @@ export_credentials.cfg
 data_*/
 mono_crash.*.json
 
+.godot/
+/android/
+.wakatime-project
+.wakatime/
+wakatime.cfg
+addons/
