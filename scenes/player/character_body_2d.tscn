@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dgh7exavoppb7"]
 
-[ext_resource type="Script" uid="uid://bddsjghddr825" path="res://scripts/Player/character_body_2d.gd" id="1_s25n1"]
+[ext_resource type="Script" uid="uid://2r5qjwl2r8uw" path="res://scripts/Player/character_body_2d.gd" id="1_s25n1"]
 [ext_resource type="Script" uid="uid://cbf8nloywouer" path="res://scripts/Player/interaction_zone.gd" id="3_lxlh8"]
 [ext_resource type="Texture2D" uid="uid://da7nieh5p8dbo" path="res://assets/sprites/Player/New Piskel (4).png" id="4_stand"]
 [ext_resource type="Texture2D" uid="uid://bocooaxlb7o2f" path="res://assets/sprites/Player/left animation.png" id="5_left"]
@@ -98,7 +98,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_body"]
-size = Vector2(65, 100)
+size = Vector2(45, 166)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_interact"]
 radius = 54.0
@@ -113,7 +113,7 @@ animation = &"left"
 autoplay = "stand"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1592935575]
-position = Vector2(0, 30)
+position = Vector2(3.5, 6)
 shape = SubResource("RectangleShape2D_body")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=44242876]
