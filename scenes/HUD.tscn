@@ -57,3 +57,25 @@ text = " Seed"
 [node name="SeedValue" type="Label" parent="MarginContainer/VBoxContainer/SeedPanel/HBoxContainer" unique_id=643635541]
 layout_mode = 2
 text = "              3"
+
+[node name="TimerContainer" type="MarginContainer" parent="." unique_id=337644856]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -52.0
+offset_top = 11.0
+offset_right = -12.0
+offset_bottom = 51.0
+grow_horizontal = 0
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="TimeLabel" type="Label" parent="TimerContainer" unique_id=1913336445]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "00:00"
+
+[node name="ClockTimer" type="Timer" parent="." unique_id=670744968]
+autostart = true
