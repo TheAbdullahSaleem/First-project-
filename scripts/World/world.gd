@@ -1,11 +1,8 @@
 extends Node2D
 
-<<<<<<< HEAD
-=======
 @export var enemy_scene: PackedScene
 var spawn_timer: Timer
 
->>>>>>> 80aa9e9d6874a564c3fee99c12db3669b613bf2e
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	DayNightCycle.soil_tiles = get_tree().get_nodes_in_group("soil_tiles")

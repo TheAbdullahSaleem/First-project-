@@ -10,7 +10,6 @@
 [ext_resource type="PackedScene" uid="uid://dgh7exavoppb7" path="res://scenes/player/character_body_2d.tscn" id="5_yr1n6"]
 [ext_resource type="Resource" uid="uid://bdhf4pwfv3csv" path="res://Resources/WheatData.tres" id="7_252at"]
 [ext_resource type="Script" uid="uid://dhsiuryspmrxs" path="res://scripts/system/ChoiceUI.gd" id="7_l5ull"]
-[ext_resource type="PackedScene" uid="uid://dx1ck683ry1qe" path="res://scenes/HUD.tscn" id="8_fe1rh"]
 [ext_resource type="Texture2D" uid="uid://cfngcvq8stoqx" path="res://assets/sprites/background/day.png" id="8_qh0kd"]
 [ext_resource type="Texture2D" uid="uid://dddf1ux0o80hs" path="res://assets/sprites/background/night.png" id="11_16fjv"]
 [ext_resource type="PackedScene" uid="uid://ceq86drpmqi6w" path="res://scenes/pond.tscn" id="12_ckp8c"]
@@ -71,8 +70,6 @@ scale = Vector2(0.51, 0.51)
 [node name="CharacterBody2D" parent="." unique_id=630034284 instance=ExtResource("5_yr1n6")]
 position = Vector2(37, -23)
 scale = Vector2(0.245, 0.245)
-
-[node name="Hud" parent="CharacterBody2D" unique_id=1000562719 instance=ExtResource("8_fe1rh")]
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=598941493]
 zoom = Vector2(3, 3)
@@ -257,7 +254,7 @@ mouse_filter = 2
 texture = ExtResource("11_16fjv")
 
 [node name="Pond" parent="." unique_id=1382120840 instance=ExtResource("12_ckp8c")]
-position = Vector2(1175.0001, 44)
+position = Vector2(1176, 42.999996)
 scale = Vector2(1.3555555, 1.3555555)
 
 [connection signal="pressed" from="CharacterBody2D/TextureRect2/Button" to="CharacterBody2D/TextureRect2" method="_on_button_pressed"]

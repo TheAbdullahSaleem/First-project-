@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://dx1ck683ry1qe"]
+
+[ext_resource type="Script" uid="uid://ch54ufqtornkh" path="res://scenes/hud.gd" id="1_qpvh6"]
+
+[node name="Hud" type="CanvasLayer" unique_id=1000562719]
+script = ExtResource("1_qpvh6")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1634151016]
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1048929958]
+layout_mode = 2
+
+[node name="HealthPanel" type="PanelContainer" parent="MarginContainer/VBoxContainer" unique_id=1448446663]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HealthPanel" unique_id=760054158]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HealthPanel/HBoxContainer" unique_id=1435680346]
+layout_mode = 2
+text = " Health"
+
+[node name="ProgressBar" type="ProgressBar" parent="MarginContainer/VBoxContainer/HealthPanel/HBoxContainer" unique_id=1843304541]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+
+[node name="WaterPanel" type="PanelContainer" parent="MarginContainer/VBoxContainer" unique_id=603949846]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/WaterPanel" unique_id=653458770]
+layout_mode = 2
+
+[node name="WaterLabel" type="Label" parent="MarginContainer/VBoxContainer/WaterPanel/HBoxContainer" unique_id=1376674924]
+layout_mode = 2
+text = " Water"
+
+[node name="Water Value" type="Label" parent="MarginContainer/VBoxContainer/WaterPanel/HBoxContainer" unique_id=1157641290]
+layout_mode = 2
+text = "          10"
+
+[node name="SeedPanel" type="PanelContainer" parent="MarginContainer/VBoxContainer" unique_id=40595238]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/SeedPanel" unique_id=1297243226]
+layout_mode = 2
+
+[node name="SeedLabel" type="Label" parent="MarginContainer/VBoxContainer/SeedPanel/HBoxContainer" unique_id=81611662]
+layout_mode = 2
+text = " Seed"
+
+[node name="SeedValue" type="Label" parent="MarginContainer/VBoxContainer/SeedPanel/HBoxContainer" unique_id=643635541]
+layout_mode = 2
+text = "              3"
