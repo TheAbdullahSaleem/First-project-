@@ -12,8 +12,9 @@ size = Vector2(65, 129)
 position = Vector2(91, 151)
 texture = ExtResource("1_arfx0")
 
-[node name="Area2D" type="Area2D" parent="." unique_id=1271384764]
+[node name="Area2D" type="Area2D" parent="." unique_id=1271384764 node_paths=PackedStringArray("prompt_label")]
 script = ExtResource("2_lx3g1")
+prompt_label = NodePath("../Label")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1384764317]
 position = Vector2(59.5, 22.5)
