@@ -5,6 +5,11 @@ var interactable_in_range = null
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
+func _ready() -> void:
+	if not $Area2D.area_entered.is_connected(_on_area_2d_area_entered):
+		$Area2D.area_entered.connect(_on_area_2d_area_entered)
+	if not $Area2D.area_exited.is_connected(_on_area_2d_area_exited):
+		$Area2D.area_exited.connect(_on_area_2d_area_exited)
 
 func _physics_process(delta: float) -> void:
 	velocity += get_gravity() * delta
@@ -24,7 +29,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	
 
-func _on_interaction_zone_area_entered(area: Area2D) -> void:
+func _on_area_2d_area_entered(area: Area2D) -> void:
 	# check if area is interactable
 	if area is Interactable:
 		# if there was alredy an interabtable area in range hide its prompt
@@ -35,7 +40,7 @@ func _on_interaction_zone_area_entered(area: Area2D) -> void:
 		interactable_in_range = area as Interactable
 		interactable_in_range.show_prompt()
 
-func _on_interaction_zone_area_exited(area: Area2D) -> void:
+func _on_area_2d_area_exited(area: Area2D) -> void:
 	# if area that exited was the latest one in range, then hide its prompt
 	if area == interactable_in_range:
 		interactable_in_range.hide_prompt()
@@ -48,7 +53,7 @@ func attack():
 # Check for inputs
 func _input(event: InputEvent) -> void:
 	# If E is pressed, trigger interact function of interactable area
-	if event.is_action_pressed("Interact"):
+	if event.is_action_pressed("Interact") and interactable_in_range != null:
 		interactable_in_range.interact()  # null reference error
 	# If attack key is pressed, then call the attack function
 	if event.is_action_pressed("Attack"):

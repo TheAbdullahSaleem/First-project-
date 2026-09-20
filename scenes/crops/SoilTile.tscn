@@ -33,10 +33,10 @@ metadata/_custom_type_script = "uid://qb8hg4qh2lib"
 
 [node name="Label" type="Label" parent="." unique_id=535253080]
 offset_left = -20.0
-offset_top = -35.0
+offset_top = -42.0
 offset_right = 20.0
-offset_bottom = -12.0
-theme_override_font_sizes/font_size = 4
+offset_bottom = -19.0
+theme_override_font_sizes/font_size = 10
 text = "[E]"
 horizontal_alignment = 1
 vertical_alignment = 1
