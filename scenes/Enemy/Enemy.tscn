@@ -104,7 +104,7 @@ animations = [{
 radius = 163.24828
 
 [node name="Enemy" type="CharacterBody2D" unique_id=1926190164]
-scale = Vector2(0.05, 0.05)
+scale = Vector2(0.025, 0.025)
 script = ExtResource("1_ftuji")
 
 [node name="Enemy" type="AnimatedSprite2D" parent="." unique_id=1902302779]

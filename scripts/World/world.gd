@@ -32,19 +32,29 @@ func _on_night_started():
 func spawn_enemy():
 	var enemy = enemy_scene.instantiate()
 	var camera = $CharacterBody2D/Camera2D
-	
 	var viewport_size = get_viewport_rect().size
-	var spawn_radius = max(viewport_size.x, viewport_size.y) * 0.7
 	
-	var random_angle = randf() * TAU
+	var random_direction = 1 if randf() > 0.5 else -1
+	var ideal_x = camera.global_position.x + (viewport_size.x * 0.7 * random_direction)
 	
-	var spawn_offset = Vector2.RIGHT.rotated(random_angle) * spawn_radius
-	enemy.global_position = camera.global_position + spawn_offset
+	var spawn_x = clampf(ideal_x, -192.0, 816.0)
+	
+	var random_height = camera.global_position.y - randf_range(0, viewport_size.y * 0.5)
+	
+	var spawn_y = min(random_height, -50.0)
+	
+	enemy.global_position = Vector2(spawn_x, spawn_y)
 	
 	add_child(enemy)
+	print("enemy spawned")
 	
 
 func _on_day_started(day_number: int):
 	$Day.visible = true
 	$Night.visible = false
 	spawn_timer.stop()
+	
+	var enemies = get_tree().get_nodes_in_group("enemy")
+	for enemy in enemies:
+		enemy.queue_free()
+	
