@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://br7gqw80fccsl"
-path="res://.godot/imported/Character.png-d339051f39c4cfe7b57713331ed89424.ctex"
+uid="uid://b0u08akuls3qn"
+path="res://.godot/imported/water_icon.png-db682c549c2451e0a02b258c4d4f02d7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/crops/Character.png"
-dest_files=["res://.godot/imported/Character.png-d339051f39c4cfe7b57713331ed89424.ctex"]
+source_file="res://assets/sprites/crops/water_icon.png"
+dest_files=["res://.godot/imported/water_icon.png-db682c549c2451e0a02b258c4d4f02d7.ctex"]
 
 [params]
 

@@ -1,11 +1,8 @@
 [gd_scene format=3 uid="uid://dgh7exavoppb7"]
 
-[ext_resource type="Texture2D" uid="uid://bca0apb33r2l" path="res://icon.svg" id="1_4bq1r"]
 [ext_resource type="Script" uid="uid://bddsjghddr825" path="res://scripts/Player/character_body_2d.gd" id="1_s25n1"]
+[ext_resource type="Texture2D" uid="uid://br7gqw80fccsl" path="res://assets/sprites/Player/Character.png" id="2_lxlh8"]
 [ext_resource type="Script" uid="uid://cbf8nloywouer" path="res://scenes/player/interaction_zone.gd" id="3_lxlh8"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_y1q5r"]
-size = Vector2(83, 89)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_y1q5r"]
 radius = 104.019226
@@ -13,14 +10,10 @@ radius = 104.019226
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=1356328789]
 script = ExtResource("1_s25n1")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1425277986]
-position = Vector2(0.5, -3.5)
-shape = SubResource("RectangleShape2D_y1q5r")
-
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1507905947]
-position = Vector2(0.9999981, -3.000001)
-scale = Vector2(0.6796875, 0.7109375)
-texture = ExtResource("1_4bq1r")
+position = Vector2(1.0000038, -0.9999962)
+scale = Vector2(4.8261724, 4.7714844)
+texture = ExtResource("2_lxlh8")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1234564467]
 position_smoothing_enabled = true
@@ -30,5 +23,8 @@ position_smoothing_speed = 10.0
 script = ExtResource("3_lxlh8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction_Zone" unique_id=1148541318]
-position = Vector2(3, 1)
+position = Vector2(1, -5)
 shape = SubResource("CircleShape2D_y1q5r")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1332152435]
+polygon = PackedVector2Array(-19, -39, 20, -40, 20, -35, 25, -35, 25, -29, 30, -29, 30, -10, 35, -10, 40, -16, 40, 0, 36, -3, 34, -5, 29, -5, 30, 7, 20, 17, 15, 19, 15, 26, 20, 30, 18, 33, 6, 32, 10, 27, 10, 17, -10, 17, -10, 27, -4, 30, -6, 33, -18, 32, -14, 28, -13, 20, -27, 9, -27, -6, -32, -5, -37, 1, -37, -16, -31, -9, -27, -9, -28, -27, -25, -29, -25, -35)
