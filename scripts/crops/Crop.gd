@@ -34,12 +34,13 @@ func on_new_day() -> void:
 			mutate()
 
 func grow() -> void:
-	if current_stage < crop_data.growth_stages - 1:
+	if current_stage < crop_data.crop_stages - 1:
 		current_stage += 1
 		update_sprite()
 
 func water_crop() -> void:
 	if is_watered:
+		print("Already watered")
 		return  # already watered today
 	if not Inventory.use_water():
 		print("No water left!")
@@ -48,25 +49,25 @@ func water_crop() -> void:
 	# Optional: add a visual tint or water droplet effect here
 
 func harvest() -> void:
-	if current_stage < crop_data.growth_stages - 1:
+	if current_stage < crop_data.crop_stages - 1:
 		print("Not ready yet!")
 		return
 	Inventory.add_food(crop_data.food_yield)
-	emit_signal("crop_harvested", crop_data.food_yield)
+	crop_harvested.emit(crop_data.food_yield)
 	queue_free()   # remove crop from world after harvest
 
 func mutate() -> void:
 	is_mutated = true
 	# Change sprite to cursed/black-root version
 	sprite.modulate = Color(0.1, 0.0, 0.1)   # dark purple tint for now
-	emit_signal("crop_mutated")
+	crop_mutated.emit()
 
 func update_sprite() -> void:
 	if crop_data and crop_data.stage_textures.size() > current_stage:
 		sprite.texture = crop_data.stage_textures[current_stage]
 
 func is_fully_grown() -> bool:
-	return current_stage >= crop_data.growth_stages - 1
+	return current_stage >= crop_data.crop_stages - 1
 
 # Called when player presses E near this crop
 func interact() -> void:
@@ -82,4 +83,4 @@ func show_mutation_choice() -> void:
 	# You'll connect this to a UI popup later
 	# For now just print — replace with actual dialog
 	print("A black root grows here. [A] Harvest  [B] Destroy  [C] Leave")
-	emit_signal("crop_mutated")   # UI listens to show choice dialog
+	crop_mutated.emit()   # UI listens to show choice dialog

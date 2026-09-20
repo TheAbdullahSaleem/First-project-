@@ -2,9 +2,14 @@
 
 [ext_resource type="Script" uid="uid://qb8hg4qh2lib" path="res://scripts/crops/Crop.gd" id="1_0xo64"]
 [ext_resource type="Script" uid="uid://d23t0t4842lfg" path="res://scripts/crops/CropData.gd" id="2_ame7d"]
+[ext_resource type="Texture2D" uid="uid://11ed2s0nnns2" path="res://assets/sprites/crops/crop2_stage1.png" id="3_iy27x"]
+[ext_resource type="Texture2D" uid="uid://7llfi75kpg07" path="res://assets/sprites/crops/crop2_stage2.png" id="4_84y8a"]
+[ext_resource type="Texture2D" uid="uid://c1u350ob3offj" path="res://assets/sprites/crops/crop2_stage3.png" id="5_doiua"]
+[ext_resource type="Texture2D" uid="uid://33mcs0t2skuf" path="res://assets/sprites/crops/crop2_stage4.png" id="6_v8p5j"]
 
 [sub_resource type="Resource" id="Resource_lxlh8"]
 script = ExtResource("2_ame7d")
+stage_textures = Array[Texture2D]([ExtResource("3_iy27x"), ExtResource("4_84y8a"), ExtResource("5_doiua"), ExtResource("6_v8p5j")])
 metadata/_custom_type_script = "uid://d23t0t4842lfg"
 
 [node name="Crop" type="Node2D" unique_id=289767440]
