@@ -2,6 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://y16w1if3uevr" path="res://assets/sprites/background/menu.png" id="1_yqorp"]
 
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_0ykhv"]
+
 [node name="MainMenu" type="Control" unique_id=1560203542]
 layout_mode = 3
 anchors_preset = 15
@@ -49,6 +51,7 @@ horizontal_alignment = 1
 
 [node name="HSeparator" type="HSeparator" parent="background/VBoxContainer" unique_id=988414384]
 layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_0ykhv")
 
 [node name="New game" type="Button" parent="background/VBoxContainer" unique_id=378544597]
 layout_mode = 2
