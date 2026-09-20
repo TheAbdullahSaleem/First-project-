@@ -15,6 +15,7 @@ signal crop_harvested(food_amount: int)
 signal crop_mutated
 
 func _ready() -> void:
+	add_to_group("crops")
 	update_sprite()
 
 # Called by the Day/Night system at the start of each new day
