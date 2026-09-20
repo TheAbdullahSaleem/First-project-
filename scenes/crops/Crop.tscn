@@ -6,11 +6,15 @@
 [ext_resource type="Texture2D" uid="uid://7llfi75kpg07" path="res://assets/sprites/crops/crop2_stage2.png" id="4_84y8a"]
 [ext_resource type="Texture2D" uid="uid://c1u350ob3offj" path="res://assets/sprites/crops/crop2_stage3.png" id="5_doiua"]
 [ext_resource type="Texture2D" uid="uid://33mcs0t2skuf" path="res://assets/sprites/crops/crop2_stage4.png" id="6_v8p5j"]
+[ext_resource type="Script" uid="uid://nu6lxw81fvnw" path="res://scripts/system/interactable.gd" id="7_84y8a"]
 
 [sub_resource type="Resource" id="Resource_lxlh8"]
 script = ExtResource("2_ame7d")
 stage_textures = Array[Texture2D]([ExtResource("3_iy27x"), ExtResource("4_84y8a"), ExtResource("5_doiua"), ExtResource("6_v8p5j")])
 metadata/_custom_type_script = "uid://d23t0t4842lfg"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4tqpv"]
+size = Vector2(4, 16)
 
 [node name="Crop" type="Node2D" unique_id=289767440]
 script = ExtResource("1_0xo64")
@@ -18,10 +22,19 @@ crop_data = SubResource("Resource_lxlh8")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=634469242]
 
-[node name="Area2D" type="Area2D" parent="." unique_id=1287896864]
+[node name="Area2D" type="Area2D" parent="." unique_id=1287896864 node_paths=PackedStringArray("prompt_label")]
+script = ExtResource("7_84y8a")
+prompt_label = NodePath("../Label")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=503131459]
+shape = SubResource("RectangleShape2D_4tqpv")
 
 [node name="Label" type="Label" parent="." unique_id=724424556]
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = -19.0
+offset_top = -24.0
+offset_right = 21.0
+offset_bottom = -1.0
+theme_override_font_sizes/font_size = 4
+text = "[E]"
+horizontal_alignment = 1
+vertical_alignment = 1

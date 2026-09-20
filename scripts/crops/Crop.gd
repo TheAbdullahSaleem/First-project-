@@ -84,3 +84,10 @@ func show_mutation_choice() -> void:
 	# For now just print — replace with actual dialog
 	print("A black root grows here. [A] Harvest  [B] Destroy  [C] Leave")
 	crop_mutated.emit()   # UI listens to show choice dialog
+
+func show_prompt():
+	label.text = "[E]"
+	label.visible = true
+	
+func hide_prompt():
+	label.visible = false

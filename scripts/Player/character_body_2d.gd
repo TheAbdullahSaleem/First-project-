@@ -1,5 +1,6 @@
 extends CharacterBody2D
 var i_eat = "True"
+var interactable_in_range = null
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
@@ -22,3 +23,21 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 	
+
+
+func _on_interaction_zone_area_entered(area: Area2D) -> void:
+	if area is Interactable:
+		if interactable_in_range != null:
+			interactable_in_range.hide_prompt()
+		
+		interactable_in_range = area as Interactable
+		interactable_in_range.show_prompt()
+
+func _on_interaction_zone_area_exited(area: Area2D) -> void:
+	if area == interactable_in_range:
+		interactable_in_range.hide_prompt()
+		interactable_in_range = null
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("Interact"):
+		interactable_in_range.interact()
