@@ -1,4 +1,4 @@
 extends Node2D
 
 func interact():
-	print("interacted")
+	DayNightCycle.skip_night()
