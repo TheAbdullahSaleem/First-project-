@@ -16,7 +16,7 @@ size = Vector2(4, 12)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_00we2"]
 size = Vector2(16, 16)
 
-[node name="SoilTile" type="Node2D" unique_id=579594894]
+[node name="SoilTile" type="Node2D" unique_id=579594894 groups=["soil_tiles"]]
 script = ExtResource("1_l3g8s")
 default_crop_data = SubResource("Resource_vfscn")
 tilled_texture = ExtResource("3_pq2ry")

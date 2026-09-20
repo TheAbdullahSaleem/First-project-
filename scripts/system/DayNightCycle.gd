@@ -18,12 +18,13 @@ func _process(delta: float) -> void:
 	time_elapsed += delta
 	
 	# Halfway through = sunset
-	if not is_night and time_elapsed >= day_length_seconds * 0.5714:
+	if not is_night and time_elapsed >= day_length_seconds * 0.01:
 		start_night()
 	
 	# Full cycle = new day
 	if time_elapsed >= day_length_seconds:
 		time_elapsed = 0.0
+		day_ended.emit()
 		start_new_day()
 
 func start_night() -> void:
@@ -46,3 +47,5 @@ func skip_night():
 	if is_night == true:
 		time_elapsed = 0.0
 		start_new_day()
+	else:
+		print("It's daytime")

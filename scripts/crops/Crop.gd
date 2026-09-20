@@ -52,7 +52,7 @@ func harvest() -> void:
 		print("Not ready yet!")
 		return
 	Inventory.add_food(crop_data.food_yield)
-	crop_harvested.emit(crop_data.food_yield)
+	SignalBus.crop_harvested.emit(crop_data.food_yield)
 	queue_free()   # remove crop from world after harvest
 
 func mutate() -> void:
@@ -73,7 +73,7 @@ func interact() -> void:
 	if is_mutated:
 		show_mutation_choice()
 		return
-	if is_fully_grown():
+	if is_watered || is_fully_grown():
 		harvest()
 	else:
 		water_crop()
@@ -82,5 +82,5 @@ func show_mutation_choice() -> void:
 	# You'll connect this to a UI popup later
 	# For now just print — replace with actual dialog
 	print("A black root grows here. [A] Harvest  [B] Destroy  [C] Leave")
-	crop_mutated.emit()   # UI listens to show choice dialog
+	SignalBus.crop_mutated.emit(self)   # UI listens to show choice dialog
 	
