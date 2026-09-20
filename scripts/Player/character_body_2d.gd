@@ -3,7 +3,7 @@ extends CharacterBody2D
 var interactable_in_range = null
 
 const SPEED = 100.0
-const JUMP_VELOCITY = -500.0
+const JUMP_VELOCITY = -300.0
 const GRAVITY = 1200.0
 
 @onready var anim = $AnimatedSprite2D
