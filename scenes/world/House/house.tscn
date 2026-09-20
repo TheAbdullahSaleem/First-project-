@@ -1,12 +1,14 @@
 [gd_scene format=3 uid="uid://di5j4qsfsh1s1"]
 
 [ext_resource type="Texture2D" uid="uid://cdlxoq5dlq1qw" path="res://assets/sprites/House/New Piskel (3).png" id="1_arfx0"]
+[ext_resource type="Script" uid="uid://0ja1ela7l84n" path="res://scripts/World/House/house.gd" id="1_g7ws7"]
 [ext_resource type="Script" uid="uid://nu6lxw81fvnw" path="res://scripts/system/interactable.gd" id="2_lx3g1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_00we2"]
 size = Vector2(65, 129)
 
 [node name="Node2D" type="Node2D" unique_id=2004345875 groups=["Interactable Group"]]
+script = ExtResource("1_g7ws7")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=349461986]
 position = Vector2(91, 151)

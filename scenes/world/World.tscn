@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://byol681bbevf4" path="res://assets/sprites/crops/soiltile.png" id="3_252at"]
 [ext_resource type="PackedScene" uid="uid://di5j4qsfsh1s1" path="res://scenes/world/House/house.tscn" id="4_qh0kd"]
 [ext_resource type="PackedScene" uid="uid://dgh7exavoppb7" path="res://scenes/player/character_body_2d.tscn" id="5_yr1n6"]
+[ext_resource type="PackedScene" uid="uid://qcomiwmyqvql" path="res://scenes/crops/Crop.tscn" id="6_i1jm3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l5ull"]
 texture = ExtResource("1_qxiha")
@@ -42,3 +43,6 @@ scale = Vector2(0.51, 0.51)
 [node name="CharacterBody2D" parent="." unique_id=630034284 instance=ExtResource("5_yr1n6")]
 position = Vector2(41, -23)
 scale = Vector2(0.58, 0.58)
+
+[node name="Crop" parent="." unique_id=289767440 instance=ExtResource("6_i1jm3")]
+position = Vector2(108, -8)
