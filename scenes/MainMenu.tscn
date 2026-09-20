@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://du513clpbeqxa"]
 
+[ext_resource type="Script" uid="uid://nk6s7kccs1sd" path="res://scenes/main_menu.gd" id="1_0ykhv"]
 [ext_resource type="Texture2D" uid="uid://y16w1if3uevr" path="res://assets/sprites/background/menu.png" id="1_yqorp"]
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_0ykhv"]
@@ -12,6 +13,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_0ykhv")
 
 [node name="background" type="TextureRect" parent="." unique_id=39571896]
 layout_mode = 1
@@ -61,3 +63,6 @@ text = "New Game"
 [node name="Quit" type="Button" parent="background/VBoxContainer" unique_id=1167269097]
 layout_mode = 2
 text = "Quit"
+
+[connection signal="pressed" from="background/VBoxContainer/New game" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="background/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
