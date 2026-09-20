@@ -41,3 +41,8 @@ func start_new_day() -> void:
 	
 	day_started.emit(current_day)
 	print("Day %d begins." % current_day)
+
+func skip_night():
+	if is_night == true:
+		time_elapsed = 0.0
+		start_new_day()

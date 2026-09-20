@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://eijxise53vdx"]
 
 [ext_resource type="Script" uid="uid://hig1biga7hhp" path="res://scripts/crops/SoilTile.gd" id="1_l3g8s"]
-[ext_resource type="Script" uid="uid://qb8hg4qh2lib" path="res://scripts/crops/Crop.gd" id="1_vfscn"]
 [ext_resource type="Script" uid="uid://d23t0t4842lfg" path="res://scripts/crops/CropData.gd" id="2_pq2ry"]
 [ext_resource type="Texture2D" uid="uid://byol681bbevf4" path="res://assets/sprites/crops/soiltile.png" id="3_pq2ry"]
 [ext_resource type="Script" uid="uid://nu6lxw81fvnw" path="res://scripts/system/interactable.gd" id="4_jgn0q"]
+[ext_resource type="Texture2D" uid="uid://byopkivmy4rkk" path="res://assets/sprites/crops/grass.png" id="4_tvp7b"]
 
 [sub_resource type="Resource" id="Resource_vfscn"]
 script = ExtResource("2_pq2ry")
@@ -13,23 +13,25 @@ metadata/_custom_type_script = "uid://d23t0t4842lfg"
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pq2ry"]
 size = Vector2(4, 12)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_00we2"]
+size = Vector2(16, 16)
+
 [node name="SoilTile" type="Node2D" unique_id=579594894]
 script = ExtResource("1_l3g8s")
 default_crop_data = SubResource("Resource_vfscn")
+tilled_texture = ExtResource("3_pq2ry")
+bare_texture = ExtResource("4_tvp7b")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2075368317]
-texture = ExtResource("3_pq2ry")
 
-[node name="Area2D" type="Area2D" parent="." unique_id=511603673]
+[node name="Area2D" type="Area2D" parent="." unique_id=511603673 node_paths=PackedStringArray("prompt_label")]
 script = ExtResource("4_jgn0q")
+prompt_label = NodePath("../Label")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1988483769]
+physics_interpolation_mode = 1
 position = Vector2(0, -14)
 shape = SubResource("RectangleShape2D_pq2ry")
-
-[node name="Crop" type="Node2D" parent="." unique_id=1584161492]
-script = ExtResource("1_vfscn")
-metadata/_custom_type_script = "uid://qb8hg4qh2lib"
 
 [node name="Label" type="Label" parent="." unique_id=535253080]
 offset_left = -20.0
@@ -40,3 +42,8 @@ theme_override_font_sizes/font_size = 10
 text = "[E]"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1407595783]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1642152618]
+shape = SubResource("RectangleShape2D_00we2")

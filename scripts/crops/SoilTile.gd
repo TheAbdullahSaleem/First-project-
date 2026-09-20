@@ -12,6 +12,9 @@ var crop_instance: Crop = null    # currently planted crop
 
 const CROP_SCENE = preload("res://scenes/crops/Crop.tscn")
 
+func _ready():
+	sprite.texture = bare_texture
+
 # Called when player presses E on this tile
 func interact() -> void:
 	if crop_instance != null:
@@ -26,6 +29,7 @@ func interact() -> void:
 func till_soil() -> void:
 	is_tilled = true
 	sprite.texture = tilled_texture
+	print("Soil tilled")
 
 func plant_seed() -> void:
 	if not Inventory.use_seed():
@@ -34,7 +38,14 @@ func plant_seed() -> void:
 	
 	crop_instance = CROP_SCENE.instantiate()
 	crop_instance.crop_data = default_crop_data
+	
+	# moves the crop on top
+	crop_instance.position = Vector2(0, -16)
+
+
 	add_child(crop_instance)
+	
+	print("seed planted")
 	
 	# Listen for harvest so we know the crop is gone
 	crop_instance.crop_harvested.connect(_on_crop_harvested)

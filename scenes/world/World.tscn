@@ -1,11 +1,12 @@
 [gd_scene format=4 uid="uid://dhv0iwhuhemvr"]
 
+[ext_resource type="PackedScene" uid="uid://eijxise53vdx" path="res://scenes/crops/SoilTile.tscn" id="1_5qbjp"]
 [ext_resource type="Texture2D" uid="uid://byopkivmy4rkk" path="res://assets/sprites/crops/grass.png" id="1_qxiha"]
 [ext_resource type="Texture2D" uid="uid://djfksoaqkcqs7" path="res://assets/sprites/crops/ground.png" id="2_i1jm3"]
 [ext_resource type="Texture2D" uid="uid://byol681bbevf4" path="res://assets/sprites/crops/soiltile.png" id="3_252at"]
 [ext_resource type="PackedScene" uid="uid://di5j4qsfsh1s1" path="res://scenes/world/House/house.tscn" id="4_qh0kd"]
 [ext_resource type="PackedScene" uid="uid://dgh7exavoppb7" path="res://scenes/player/character_body_2d.tscn" id="5_yr1n6"]
-[ext_resource type="PackedScene" uid="uid://qcomiwmyqvql" path="res://scenes/crops/Crop.tscn" id="6_i1jm3"]
+[ext_resource type="Resource" uid="uid://bdhf4pwfv3csv" path="res://Resources/WheatData.tres" id="7_252at"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l5ull"]
 texture = ExtResource("1_qxiha")
@@ -44,5 +45,6 @@ scale = Vector2(0.51, 0.51)
 position = Vector2(41, -23)
 scale = Vector2(0.58, 0.58)
 
-[node name="Crop" parent="." unique_id=289767440 instance=ExtResource("6_i1jm3")]
-position = Vector2(108, -8)
+[node name="SoilTile" parent="." unique_id=579594894 instance=ExtResource("1_5qbjp")]
+position = Vector2(87, -8)
+default_crop_data = ExtResource("7_252at")

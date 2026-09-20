@@ -44,6 +44,7 @@ func water_crop() -> void:
 		print("No water left!")
 		return
 	is_watered = true
+	print("Watering done")
 	# Optional: add a visual tint or water droplet effect here
 
 func harvest() -> void:
