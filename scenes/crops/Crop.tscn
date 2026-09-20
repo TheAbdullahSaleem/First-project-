@@ -30,10 +30,10 @@ prompt_label = NodePath("../Label")
 shape = SubResource("RectangleShape2D_4tqpv")
 
 [node name="Label" type="Label" parent="." unique_id=724424556]
-offset_left = -19.0
-offset_top = -24.0
-offset_right = 21.0
-offset_bottom = -1.0
+offset_left = -20.0
+offset_top = -26.0
+offset_right = 20.0
+offset_bottom = -3.0
 theme_override_font_sizes/font_size = 4
 text = "[E]"
 horizontal_alignment = 1
