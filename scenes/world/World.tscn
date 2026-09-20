@@ -32,7 +32,23 @@ sources/0 = SubResource("TileSetAtlasSource_l5ull")
 sources/1 = SubResource("TileSetAtlasSource_16fjv")
 sources/2 = SubResource("TileSetAtlasSource_ckp8c")
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_00we2"]
+[sub_resource type="CanvasTexture" id="CanvasTexture_l5ull"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g4cn6"]
+bg_color = Color(0.3764706, 0.19607843, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aa8uq"]
+bg_color = Color(0.37644815, 0.19582939, 0.99999994, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qbaj4"]
+bg_color = Color(0.3764706, 0.19607843, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2x23e"]
+bg_color = Color(1, 1, 1, 0)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
 
 [node name="World" type="Node2D" unique_id=222421646]
 script = ExtResource("1_yr1n6")
@@ -62,61 +78,116 @@ position_smoothing_speed = 10.0
 
 [node name="TextureRect2" type="TextureRect" parent="CharacterBody2D" unique_id=1172300207]
 process_mode = 3
+modulate = Color(0.4003823, 0.18273371, 1.4439226e-07, 1)
 z_index = 100
 offset_left = -497.95917
 offset_top = -485.71426
 offset_right = 216.32654
 offset_bottom = 26.285736
 scale = Vector2(1.3083338, 1.2238054)
-texture = SubResource("NoiseTexture2D_00we2")
+texture = SubResource("CanvasTexture_l5ull")
 script = ExtResource("7_l5ull")
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="CharacterBody2D/TextureRect2" unique_id=1749541624]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -257.0
+offset_top = -31.500015
+offset_right = 256.99997
+offset_bottom = 31.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 45
+text = "A black root grows here"
 
 [node name="Button" type="Button" parent="CharacterBody2D/TextureRect2" unique_id=256794706]
-layout_mode = 0
-offset_left = 93.59155
-offset_top = 406.89404
-offset_right = 230.85913
-offset_bottom = 471.57004
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 99.830986
+offset_top = 74.18454
+offset_right = 237.09857
+offset_bottom = 138.86057
+grow_vertical = 2
 theme_override_font_sizes/font_size = 29
+theme_override_styles/normal = SubResource("StyleBoxFlat_g4cn6")
 text = "Harvest"
 
 [node name="Button2" type="Button" parent="CharacterBody2D/TextureRect2" unique_id=319006252]
-layout_mode = 0
-offset_left = 299.49298
-offset_top = 406.89407
-offset_right = 436.76056
-offset_bottom = 471.57007
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -88.84708
+offset_top = 74.18451
+offset_right = 48.4205
+offset_bottom = 138.86047
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_font_sizes/font_size = 29
+theme_override_styles/normal = SubResource("StyleBoxFlat_aa8uq")
 text = "Destroy"
 
 [node name="Button3" type="Button" parent="CharacterBody2D/TextureRect2" unique_id=2126544798]
-layout_mode = 0
-offset_left = 514.75354
-offset_top = 406.89404
-offset_right = 652.0211
-offset_bottom = 471.57004
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -265.04626
+offset_top = 74.18454
+offset_right = -87.22229
+offset_bottom = 138.8605
+grow_horizontal = 0
+grow_vertical = 2
 theme_override_font_sizes/font_size = 29
+theme_override_styles/normal = SubResource("StyleBoxFlat_qbaj4")
 text = "Do Nothing"
+
+[node name="Panel" type="Panel" parent="CharacterBody2D/TextureRect2" unique_id=163659621]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_2x23e")
+metadata/_edit_lock_ = true
 
 [node name="SoilTile" parent="." unique_id=579594894 instance=ExtResource("1_5qbjp")]
 position = Vector2(88, 8)
 default_crop_data = ExtResource("7_252at")
+metadata/_edit_lock_ = true
 
 [node name="SoilTile2" parent="." unique_id=1527958670 instance=ExtResource("1_5qbjp")]
 position = Vector2(104, 8)
 default_crop_data = ExtResource("7_252at")
+metadata/_edit_lock_ = true
 
 [node name="SoilTile3" parent="." unique_id=671666470 instance=ExtResource("1_5qbjp")]
 position = Vector2(120, 8)
 default_crop_data = ExtResource("7_252at")
+metadata/_edit_lock_ = true
 
 [node name="SoilTile4" parent="." unique_id=491285695 instance=ExtResource("1_5qbjp")]
 position = Vector2(136, 8)
 default_crop_data = ExtResource("7_252at")
+metadata/_edit_lock_ = true
 
 [node name="SoilTile5" parent="." unique_id=1426898208 instance=ExtResource("1_5qbjp")]
 position = Vector2(152, 8)
 default_crop_data = ExtResource("7_252at")
+metadata/_edit_lock_ = true
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1162393397]
 z_index = -1

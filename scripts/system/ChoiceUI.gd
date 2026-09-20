@@ -28,3 +28,4 @@ func _on_button_pressed() -> void:
 func close_ui():
 	visible = false
 	get_tree().paused = false
+	
