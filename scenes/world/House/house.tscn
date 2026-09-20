@@ -1,13 +1,29 @@
 [gd_scene format=3 uid="uid://di5j4qsfsh1s1"]
 
 [ext_resource type="Texture2D" uid="uid://cdlxoq5dlq1qw" path="res://assets/sprites/House/New Piskel (3).png" id="1_arfx0"]
+[ext_resource type="Script" uid="uid://nu6lxw81fvnw" path="res://scripts/system/interactable.gd" id="2_lx3g1"]
 
-[node name="House" type="Area2D" unique_id=350146760 groups=["Interactable Group"]]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_00we2"]
+size = Vector2(65, 129)
+
+[node name="Node2D" type="Node2D" unique_id=2004345875 groups=["Interactable Group"]]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=349461986]
 position = Vector2(91, 151)
 texture = ExtResource("1_arfx0")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1568906303]
-position = Vector2(91, 151)
-polygon = PackedVector2Array(-62, -190, -62, -67, -1, -66, -1, -191)
+[node name="Area2D" type="Area2D" parent="." unique_id=1271384764]
+script = ExtResource("2_lx3g1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1384764317]
+position = Vector2(59.5, 22.5)
+shape = SubResource("RectangleShape2D_00we2")
+
+[node name="Label" type="Label" parent="." unique_id=1024665798]
+offset_left = 43.0
+offset_top = -69.0
+offset_right = 83.0
+offset_bottom = -46.0
+text = "[E]"
+horizontal_alignment = 1
+vertical_alignment = 1

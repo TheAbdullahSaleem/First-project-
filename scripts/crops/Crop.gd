@@ -5,7 +5,6 @@ extends Node2D
 @export var crop_data: CropData   # assign in Inspector or via code
 
 @onready var sprite = $Sprite2D
-@onready var label = $Label
 
 var current_stage: int = 0        # 0 = just planted
 var is_watered: bool = false
@@ -17,7 +16,6 @@ signal crop_mutated
 
 func _ready() -> void:
 	update_sprite()
-	label.visible = false
 
 # Called by the Day/Night system at the start of each new day
 func on_new_day() -> void:
@@ -84,10 +82,4 @@ func show_mutation_choice() -> void:
 	# For now just print — replace with actual dialog
 	print("A black root grows here. [A] Harvest  [B] Destroy  [C] Leave")
 	crop_mutated.emit()   # UI listens to show choice dialog
-
-func show_prompt():
-	label.text = "[E]"
-	label.visible = true
 	
-func hide_prompt():
-	label.visible = false
