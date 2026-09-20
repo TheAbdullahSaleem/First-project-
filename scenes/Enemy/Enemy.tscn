@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://c28ucm1h8wh28"]
+
+[ext_resource type="Script" uid="uid://3dfyd1fdl8nt" path="res://scripts/Enemy/enemy.gd" id="1_ftuji"]
+[ext_resource type="Texture2D" uid="uid://bbf1md5kj7uu3" path="res://assets/sprites/enemy/Enemy.png" id="2_8fccx"]
+
+[node name="Enemy" type="CharacterBody2D" unique_id=1926190164]
+script = ExtResource("1_ftuji")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1077176985]
+polygon = PackedVector2Array(-192, -319, -190, -63, -127, -64, -127, -32, -63, -32, -63, 0, 321, 0, 321, -32, 289, -32, 290, -64, 226, -64, 226, -95, 192, -96, 194, -161, 161, -162, 161, -193, 128, -191, 130, -225, 65, -224, 65, -288, 33, -288, 33, -320)
+
+[node name="Enemy" type="Sprite2D" parent="." unique_id=750101540]
+position = Vector2(1, 0)
+texture = ExtResource("2_8fccx")
