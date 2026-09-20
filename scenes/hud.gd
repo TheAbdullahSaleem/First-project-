@@ -1,9 +1,8 @@
 extends CanvasLayer
 
 @onready var health_bar = $MarginContainer/VBoxContainer/HealthPanel/HBoxContainer/ProgressBar
-@onready var water_value = $MarginContainer/VBoxContainer/WaterPanel/HBoxContainer/WaterValuenew
-@onready var seed_value = $MarginContainer/VBoxContainer/SeedPanel/HBoxContainer/SeedValuenew
-
+@onready var water_value = $"MarginContainer/VBoxContainer/WaterPanel/HBoxContainer/Water Value"
+@onready var seed_value = $MarginContainer/VBoxContainer/SeedPanel/HBoxContainer/SeedValue
 func update_health(new_health: int):
 	health_bar.value = new_health
 
