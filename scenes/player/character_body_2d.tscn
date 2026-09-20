@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bddsjghddr825" path="res://scripts/Player/character_body_2d.gd" id="1_s25n1"]
 [ext_resource type="Texture2D" uid="uid://br7gqw80fccsl" path="res://assets/sprites/Player/Character.png" id="2_lxlh8"]
-[ext_resource type="Script" uid="uid://cbf8nloywouer" path="res://scenes/player/interaction_zone.gd" id="3_lxlh8"]
+[ext_resource type="Script" uid="uid://cbf8nloywouer" path="res://scripts/Player/interaction_zone.gd" id="3_lxlh8"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_y1q5r"]
 radius = 104.019226
