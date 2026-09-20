@@ -6,6 +6,7 @@ var seeds: int = 3
 var water: int = 5
 var food: int = 0
 var health: int = 100
+var max_water: int = 15
 
 signal inventory_changed  # UI listens to this
 
@@ -32,5 +33,8 @@ func add_food(amount: int) -> void:
 	inventory_changed.emit()
 
 func add_water(amount: int) -> void:
-	water += amount
-	inventory_changed.emit()
+	if (water + amount) <= max_water:
+		water += amount
+		inventory_changed.emit()
+	else:
+		print("Max water storage is 15")
