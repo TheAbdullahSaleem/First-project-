@@ -9,17 +9,21 @@ extends Area2D
 
 @export var prompt_label: Label
 
+func _ready():
+	if prompt_label:
+		prompt_label.visible = false
+
 # Shows the text "[E]" in the prompt
 func show_prompt():
 	# make sure that the prompt is available
 	if prompt_label:
-		get_parent().label.text = "[E]"
-		get_parent().label.visible = true
+		prompt_label.text = "[E]"
+		prompt_label.visible = true
 
 # hides the prompt
 func hide_prompt():
 	if prompt_label:
-		get_parent().label.visible = false
+		prompt_label.visible = false
 
 # triggers the parent's interact function
 func interact():
