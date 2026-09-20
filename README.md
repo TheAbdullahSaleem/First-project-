@@ -141,4 +141,3 @@ When standing near an interactable object:
 [E] Water
 [E] Plant
 [E] Pick Up
-

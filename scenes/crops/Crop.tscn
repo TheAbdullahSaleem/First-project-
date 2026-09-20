@@ -1,6 +1,15 @@
 [gd_scene format=3 uid="uid://qcomiwmyqvql"]
 
+[ext_resource type="Script" uid="uid://qb8hg4qh2lib" path="res://scripts/crops/Crop.gd" id="1_0xo64"]
+[ext_resource type="Script" uid="uid://d23t0t4842lfg" path="res://scripts/crops/CropData.gd" id="2_ame7d"]
+
+[sub_resource type="Resource" id="Resource_lxlh8"]
+script = ExtResource("2_ame7d")
+metadata/_custom_type_script = "uid://d23t0t4842lfg"
+
 [node name="Crop" type="Node2D" unique_id=289767440]
+script = ExtResource("1_0xo64")
+crop_data = SubResource("Resource_lxlh8")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=634469242]
 

@@ -2,7 +2,7 @@
 extends Node
 
 var current_day: int = 1
-var day_length_seconds: float = 120.0   # 2 minutes per day
+var day_length_seconds: float = 210.0   # 3.5 minutes per day
 var time_elapsed: float = 0.0
 var is_night: bool = false
 
@@ -18,7 +18,7 @@ func _process(delta: float) -> void:
 	time_elapsed += delta
 	
 	# Halfway through = sunset
-	if not is_night and time_elapsed >= day_length_seconds * 0.5:
+	if not is_night and time_elapsed >= day_length_seconds * 0.5714:
 		start_night()
 	
 	# Full cycle = new day
@@ -28,7 +28,7 @@ func _process(delta: float) -> void:
 
 func start_night() -> void:
 	is_night = true
-	emit_signal("night_started")
+	night_started.emit()
 	print("Night has begun. Something is coming...")
 
 func start_new_day() -> void:
@@ -39,5 +39,5 @@ func start_new_day() -> void:
 	for tile in soil_tiles:
 		tile.on_new_day()
 	
-	emit_signal("day_started", current_day)
+	day_started.emit(current_day)
 	print("Day %d begins." % current_day)
