@@ -11,16 +11,14 @@ var total_seconds: int = 0
 
 func _ready():
 	# Connects the timer node so it triggers the timeout function every second
+	visible = true
 	$ClockTimer.timeout.connect(_on_clock_timer_timeout)
+	Inventory.inventory_changed.connect(_on_inventory_changed)
+	_on_inventory_changed()
 
-func update_health(new_health: int):
-	health_bar.value = new_health
-
-func update_water(new_amount: int):
-	water_value.text = str(new_amount)
-
-func update_seeds(new_amount: int):
-	seed_value.text = str(new_amount)
+func _on_inventory_changed():
+	seed_value.text = str(Inventory.seeds)
+	water_value.text = str(Inventory.water)
 
 # This function is called every time the ClockTimer ticks
 func _on_clock_timer_timeout():

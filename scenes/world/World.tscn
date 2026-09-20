@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://djfksoaqkcqs7" path="res://assets/sprites/crops/ground.png" id="2_i1jm3"]
 [ext_resource type="Texture2D" uid="uid://byol681bbevf4" path="res://assets/sprites/crops/soiltile.png" id="3_252at"]
 [ext_resource type="PackedScene" uid="uid://di5j4qsfsh1s1" path="res://scenes/world/House/house.tscn" id="4_qh0kd"]
-[ext_resource type="PackedScene" uid="uid://dgh7exavoppb7" path="res://scenes/player/character_body_2d.tscn" id="5_yr1n6"]
+[ext_resource type="PackedScene" uid="uid://dgh7exavoppb7" path="res://scenes/player/Player.tscn" id="5_yr1n6"]
 [ext_resource type="Resource" uid="uid://bdhf4pwfv3csv" path="res://Resources/WheatData.tres" id="7_252at"]
 [ext_resource type="Script" uid="uid://dhsiuryspmrxs" path="res://scripts/system/ChoiceUI.gd" id="7_l5ull"]
 [ext_resource type="PackedScene" uid="uid://dx1ck683ry1qe" path="res://scenes/HUD.tscn" id="8_fe1rh"]
@@ -73,6 +73,7 @@ position = Vector2(37, -23)
 scale = Vector2(0.245, 0.245)
 
 [node name="Hud" parent="CharacterBody2D" unique_id=1000562719 instance=ExtResource("8_fe1rh")]
+visible = false
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=598941493]
 zoom = Vector2(3, 3)
@@ -85,6 +86,7 @@ position_smoothing_speed = 10.0
 
 [node name="TextureRect2" type="TextureRect" parent="CharacterBody2D" unique_id=1172300207]
 process_mode = 3
+visible = false
 modulate = Color(0.4003823, 0.18273371, 1.4439226e-07, 1)
 z_index = 100
 offset_left = -497.95917
@@ -175,27 +177,22 @@ metadata/_edit_lock_ = true
 [node name="SoilTile" parent="." unique_id=579594894 instance=ExtResource("1_5qbjp")]
 position = Vector2(88, 8)
 default_crop_data = ExtResource("7_252at")
-metadata/_edit_lock_ = true
 
 [node name="SoilTile2" parent="." unique_id=1527958670 instance=ExtResource("1_5qbjp")]
-position = Vector2(104, 8)
-default_crop_data = ExtResource("7_252at")
-metadata/_edit_lock_ = true
-
-[node name="SoilTile3" parent="." unique_id=671666470 instance=ExtResource("1_5qbjp")]
 position = Vector2(120, 8)
 default_crop_data = ExtResource("7_252at")
-metadata/_edit_lock_ = true
+
+[node name="SoilTile3" parent="." unique_id=671666470 instance=ExtResource("1_5qbjp")]
+position = Vector2(184, 8)
+default_crop_data = ExtResource("7_252at")
 
 [node name="SoilTile4" parent="." unique_id=491285695 instance=ExtResource("1_5qbjp")]
-position = Vector2(136, 8)
-default_crop_data = ExtResource("7_252at")
-metadata/_edit_lock_ = true
-
-[node name="SoilTile5" parent="." unique_id=1426898208 instance=ExtResource("1_5qbjp")]
 position = Vector2(152, 8)
 default_crop_data = ExtResource("7_252at")
-metadata/_edit_lock_ = true
+
+[node name="SoilTile5" parent="." unique_id=1426898208 instance=ExtResource("1_5qbjp")]
+position = Vector2(216, 8)
+default_crop_data = ExtResource("7_252at")
 
 [node name="Day" type="TextureRect" parent="." unique_id=1162393397]
 z_index = -1

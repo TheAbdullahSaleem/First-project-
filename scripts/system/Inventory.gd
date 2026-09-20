@@ -30,3 +30,7 @@ func use_water() -> bool:
 func add_food(amount: int) -> void:
 	food += amount
 	inventory_changed.emit()
+
+func add_water(amount: int) -> void:
+	water += amount
+	inventory_changed.emit()

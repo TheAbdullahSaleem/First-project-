@@ -74,6 +74,15 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ti0ca")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5h5g3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vf8gp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ys4s2")
 }],
 "loop": 1,
 "name": &"left",
@@ -94,14 +103,27 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_4a20e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0hw2c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kfomc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7o54g")
 }],
 "loop": 1,
 "name": &"right",
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_00we2"]
-radius = 163.24828
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_00we2"]
+size = Vector2(560.0002, 320.00003)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fe1rh"]
+radius = 119.99448
+height = 239.98907
 
 [node name="Enemy" type="CharacterBody2D" unique_id=1926190164]
 scale = Vector2(0.025, 0.025)
@@ -110,15 +132,18 @@ script = ExtResource("1_ftuji")
 [node name="Enemy" type="AnimatedSprite2D" parent="." unique_id=1902302779]
 position = Vector2(1, 0)
 sprite_frames = SubResource("SpriteFrames_h7o6m")
-animation = &"right"
-frame = 1
-frame_progress = 0.68474
+animation = &"left"
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1077176985]
-polygon = PackedVector2Array(-192, -319, -190, -63, -127, -64, -127, -32, -63, -32, -63, 0, 321, 0, 321, -32, 289, -32, 290, -64, 226, -64, 226, -95, 192, -96, 194, -161, 161, -162, 161, -193, 128, -191, 130, -225, 65, -224, 65, -288, 33, -288, 33, -320)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1072690403]
+position = Vector2(7.152556e-06, -159.9999)
+scale = Vector2(0.99999964, 0.99999964)
+shape = SubResource("RectangleShape2D_00we2")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1797354767]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1241427741]
-position = Vector2(7, -164)
-shape = SubResource("CircleShape2D_00we2")
+position = Vector2(1.4901153e-07, -439.99994)
+rotation = -1.5803471
+shape = SubResource("CapsuleShape2D_fe1rh")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

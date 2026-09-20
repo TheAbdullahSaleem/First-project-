@@ -26,7 +26,9 @@ func start_random_timer():
 
 func _on_night_started():
 	$Night.visible = true
+	$Night2.visible = true
 	$Day.visible = false
+	$Day2.visible = false
 	start_random_timer()
 
 func spawn_enemy():
@@ -37,7 +39,7 @@ func spawn_enemy():
 	var random_direction = 1 if randf() > 0.5 else -1
 	var ideal_x = camera.global_position.x + (viewport_size.x * 0.7 * random_direction)
 	
-	var spawn_x = clampf(ideal_x, -192.0, 816.0)
+	var spawn_x = clampf(ideal_x, -192.0, 1000.0)
 	
 	var random_height = camera.global_position.y - randf_range(0, viewport_size.y * 0.5)
 	
@@ -51,7 +53,9 @@ func spawn_enemy():
 
 func _on_day_started(day_number: int):
 	$Day.visible = true
+	$Day2.visible = true
 	$Night.visible = false
+	$Night2.visible = false
 	spawn_timer.stop()
 	
 	var enemies = get_tree().get_nodes_in_group("enemy")

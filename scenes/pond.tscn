@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://ceq86drpmqi6w"]
 
 [ext_resource type="Texture2D" uid="uid://bl67kxwy23koq" path="res://assets/sprites/pond.png" id="1_4h7al"]
+[ext_resource type="Script" uid="uid://d2ojfxa14rhv7" path="res://scripts/World/pond.gd" id="2_go7bl"]
+[ext_resource type="Script" uid="uid://nu6lxw81fvnw" path="res://scripts/system/interactable.gd" id="2_hvmvx"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hvmvx"]
 atlas = ExtResource("1_4h7al")
@@ -59,11 +61,23 @@ height = 248.0
 [node name="Pond" type="AnimatedSprite2D" unique_id=1382120840]
 sprite_frames = SubResource("SpriteFrames_h7o6m")
 autoplay = "default"
-frame_progress = 0.49598676
+frame_progress = 0.20111558
+script = ExtResource("2_go7bl")
 
-[node name="Area2D" type="Area2D" parent="." unique_id=717284291]
+[node name="Area2D" type="Area2D" parent="." unique_id=717284291 node_paths=PackedStringArray("prompt_label")]
+script = ExtResource("2_hvmvx")
+prompt_label = NodePath("../Label")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1751329532]
 position = Vector2(1, -25)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_h7o6m")
+
+[node name="Label" type="Label" parent="." unique_id=2136371219]
+offset_left = -37.0
+offset_top = -146.0
+offset_right = 39.0
+offset_bottom = -96.0
+text = "[E]"
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -1,8 +1,10 @@
 extends CharacterBody2D
 
 
-const SPEED = 100.0
+const SPEED = 50.0
 var target_crop: Node2D = null
+
+@onready var anim = $Enemy
 
 func _ready() -> void:
 	add_to_group("enemy")
@@ -14,18 +16,31 @@ func _physics_process(delta: float) -> void:
 	if not is_instance_valid(target_crop):
 		target_crop = find_nearest_crop()
 	
+	
+	
 	if target_crop:
+		var direction_x = sign(target_crop.global_position.x - global_position.x)
 		if global_position.distance_to(target_crop.global_position) < 10.0:
 			target_crop.queue_free()
 			target_crop = null
 		else:
-			var direction_x = sign(target_crop.global_position.x - global_position.x)
+			
 			velocity.x = direction_x * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 	
 	move_and_slide()
 	
+	_update_animation(velocity.x)
+	
+
+func _update_animation(direction: float) -> void:
+	if direction > 0:
+		anim.play("right")
+	elif direction < 0:
+		anim.play("left")
+	else:
+		anim.stop()
 
 func find_nearest_crop():
 	var crops = get_tree().get_nodes_in_group("crops")
@@ -43,3 +58,8 @@ func find_nearest_crop():
 			nearest = crop
 	
 	return nearest
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body is Player:
+		queue_free()

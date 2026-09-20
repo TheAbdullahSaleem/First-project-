@@ -1,15 +1,5 @@
+class_name Player
 extends CharacterBody2D
-
-# 1. Define custom signals
-signal health_changed(new_health: int)
-signal water_changed(new_amount: int)
-signal seeds_changed(new_amount: int)
-
-# 2. Player inventory/stats
-var max_health: int = 100
-var current_health: int = 100
-var water_count: int = 10
-var seed_count: int = 3
 
 var interactable_in_range = null
 
@@ -21,20 +11,12 @@ const GRAVITY = 1200.0
 
 
 func _ready() -> void:
-	health_changed.connect($Hud.update_health)
-	water_changed.connect($Hud.update_water)
-	seeds_changed.connect($Hud.update_seeds)
 
 	if not $Area2D.area_entered.is_connected(_on_area_2d_area_entered):
 		$Area2D.area_entered.connect(_on_area_2d_area_entered)
 
 	if not $Area2D.area_exited.is_connected(_on_area_2d_area_exited):
 		$Area2D.area_exited.connect(_on_area_2d_area_exited)
-		
-	# ADD THESE THREE LINES: Initialize the HUD with starting values
-	health_changed.emit(current_health)
-	water_changed.emit(water_count)
-	seeds_changed.emit(seed_count)
 
 	if not $Area2D.area_entered.is_connected(_on_area_2d_area_entered):
 		$Area2D.area_entered.connect(_on_area_2d_area_entered)
@@ -99,13 +81,7 @@ func attack():
 # Check for inputs
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("Interact") and interactable_in_range != null:
-		# Check if the player has seeds before interacting
-		if seed_count > 0:
-			seed_count -= 1
-			seeds_changed.emit(seed_count) # Tell HUD to update
-			interactable_in_range.interact()
-		else:
-			print("No seeds left!")
+		interactable_in_range.interact()
 
 	if event.is_action_pressed("Attack"):
 		attack()
