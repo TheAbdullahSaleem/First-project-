@@ -98,7 +98,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_body"]
-size = Vector2(20, 28)
+size = Vector2(65, 100)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_interact"]
 radius = 54.0
@@ -113,13 +113,8 @@ animation = &"left"
 autoplay = "stand"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1592935575]
-position = Vector2(0, 4)
+position = Vector2(0, 30)
 shape = SubResource("RectangleShape2D_body")
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1143062197]
-zoom = Vector2(2.23, 2.23)
-position_smoothing_enabled = true
-position_smoothing_speed = 10.0
 
 [node name="Area2D" type="Area2D" parent="." unique_id=44242876]
 script = ExtResource("3_lxlh8")
