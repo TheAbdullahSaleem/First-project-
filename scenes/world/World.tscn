@@ -1,7 +1,5 @@
 [gd_scene format=3 uid="uid://dhv0iwhuhemvr"]
 
-[ext_resource type="PackedScene" uid="uid://eijxise53vdx" path="res://scenes/crops/SoilTile.tscn" id="1_5qbjp"]
-
 [sub_resource type="TileSet" id="TileSet_h7o6m"]
 
 [node name="World" type="Node2D" unique_id=222421646]
@@ -10,6 +8,3 @@
 tile_set = SubResource("TileSet_h7o6m")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=235724505]
-
-[node name="SoilTile" parent="." unique_id=579594894 instance=ExtResource("1_5qbjp")]
-position = Vector2(92, 225)
