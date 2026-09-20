@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://y16w1if3uevr" path="res://assets/sprites/background/menu.png" id="1_yqorp"]
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_0ykhv"]
+thickness = 2
 
 [node name="MainMenu" type="Control" unique_id=1560203542]
 layout_mode = 3
