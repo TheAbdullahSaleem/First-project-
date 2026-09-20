@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://du513clpbeqxa"]
+
+[node name="MainMenu" type="Control" unique_id=1560203542]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1063624281]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=2101289003]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -41.0
+offset_right = 20.0
+offset_bottom = 41.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="title" type="Label" parent="VBoxContainer" unique_id=1314057487]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 48
+text = "The Last Harvest"
+horizontal_alignment = 1
+
+[node name="subtitle" type="Label" parent="VBoxContainer" unique_id=775505017]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 18
+text = "Something is coming..."
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer" unique_id=988414384]
+layout_mode = 2
+
+[node name="New game" type="Button" parent="VBoxContainer" unique_id=378544597]
+layout_mode = 2
+text = "New Game"
+
+[node name="Quit" type="Button" parent="VBoxContainer" unique_id=1167269097]
+layout_mode = 2
+text = "Quit"

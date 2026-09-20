@@ -49,7 +49,7 @@ func attack():
 func _input(event: InputEvent) -> void:
 	# If E is pressed, trigger interact function of interactable area
 	if event.is_action_pressed("Interact"):
-		interactable_in_range.interact()  # null reference error
+		interactable_in_range.interact()
 	# If attack key is pressed, then call the attack function
 	if event.is_action_pressed("Attack"):
 		attack();
