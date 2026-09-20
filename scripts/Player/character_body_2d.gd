@@ -53,13 +53,10 @@ func attack():
 # Check for inputs
 func _input(event: InputEvent) -> void:
 	# If E is pressed, trigger interact function of interactable area
-<<<<<<< HEAD
+
 	if event.is_action_pressed("Interact") and interactable_in_range != null:
 		interactable_in_range.interact()  # null reference error
-=======
-	if event.is_action_pressed("Interact"):
-		interactable_in_range.interact()
->>>>>>> f44528e625df7dd3755768343e0664879e18f768
+
 	# If attack key is pressed, then call the attack function
 	if event.is_action_pressed("Attack"):
 		attack();
