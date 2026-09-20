@@ -46,7 +46,7 @@ scale = Vector2(0.51, 0.51)
 position = Vector2(41, -23)
 scale = Vector2(0.58, 0.58)
 
-[node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=598941493]
+[node name="Camera2D2" type="Camera2D" parent="CharacterBody2D" unique_id=598941493]
 zoom = Vector2(3, 3)
 limit_left = -180
 limit_top = -250
