@@ -28,7 +28,7 @@ func on_new_day() -> void:
 	
 	# Random mutation chance on day 2+ (if allowed)
 	if current_stage >= 2 and crop_data.can_mutate and not is_mutated:
-		if randf() < 0.3:    # 30% chance
+		if randf() < 0.15:    # 15% chance
 			mutate()
 
 func grow() -> void:
@@ -83,4 +83,3 @@ func show_mutation_choice() -> void:
 	# For now just print — replace with actual dialog
 	print("A black root grows here. [A] Harvest  [B] Destroy  [C] Leave")
 	SignalBus.crop_mutated.emit(self)   # UI listens to show choice dialog
-	

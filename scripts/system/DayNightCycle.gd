@@ -41,6 +41,7 @@ func start_new_day() -> void:
 		tile.on_new_day()
 	
 	day_started.emit(current_day)
+	day_ended.emit()
 	print("Day %d begins." % current_day)
 
 func skip_night():

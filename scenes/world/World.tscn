@@ -8,8 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://di5j4qsfsh1s1" path="res://scenes/world/House/house.tscn" id="4_qh0kd"]
 [ext_resource type="PackedScene" uid="uid://dgh7exavoppb7" path="res://scenes/player/character_body_2d.tscn" id="5_yr1n6"]
 [ext_resource type="Resource" uid="uid://bdhf4pwfv3csv" path="res://Resources/WheatData.tres" id="7_252at"]
-[ext_resource type="Script" uid="uid://78i84sdje7wi" path="res://scripts/system/ChoiceUI.gd" id="7_l5ull"]
+[ext_resource type="Script" uid="uid://dhsiuryspmrxs" path="res://scripts/system/ChoiceUI.gd" id="7_l5ull"]
 [ext_resource type="Texture2D" uid="uid://cfngcvq8stoqx" path="res://assets/sprites/background/day.png" id="8_qh0kd"]
+[ext_resource type="Texture2D" uid="uid://dddf1ux0o80hs" path="res://assets/sprites/background/night.png" id="11_16fjv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l5ull"]
 texture = ExtResource("1_qxiha")
@@ -189,7 +190,7 @@ position = Vector2(152, 8)
 default_crop_data = ExtResource("7_252at")
 metadata/_edit_lock_ = true
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=1162393397]
+[node name="Day" type="TextureRect" parent="." unique_id=1162393397]
 z_index = -1
 anchors_preset = 15
 anchor_right = 1.0
@@ -203,6 +204,22 @@ grow_vertical = 2
 scale = Vector2(1.5, 1.5)
 mouse_filter = 2
 texture = ExtResource("8_qh0kd")
+metadata/_edit_lock_ = true
+
+[node name="Night" type="TextureRect" parent="." unique_id=144435690]
+z_index = -1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -236.0
+offset_top = -303.0
+offset_right = 484.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.5, 1.5)
+mouse_filter = 2
+texture = ExtResource("11_16fjv")
 metadata/_edit_lock_ = true
 
 [connection signal="pressed" from="CharacterBody2D/TextureRect2/Button" to="CharacterBody2D/TextureRect2" method="_on_button_pressed"]
