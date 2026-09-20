@@ -44,7 +44,7 @@ scale = Vector2(0.51, 0.51)
 
 [node name="CharacterBody2D" parent="." unique_id=630034284 instance=ExtResource("5_yr1n6")]
 position = Vector2(41, -23)
-scale = Vector2(0.58, 0.58)
+scale = Vector2(0.245, 0.245)
 
 [node name="Camera2D2" type="Camera2D" parent="CharacterBody2D" unique_id=598941493]
 zoom = Vector2(3, 3)
