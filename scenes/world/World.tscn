@@ -1,15 +1,44 @@
-[gd_scene format=3 uid="uid://dhv0iwhuhemvr"]
+[gd_scene format=4 uid="uid://dhv0iwhuhemvr"]
 
-[ext_resource type="PackedScene" uid="uid://eijxise53vdx" path="res://scenes/crops/SoilTile.tscn" id="1_5qbjp"]
+[ext_resource type="Texture2D" uid="uid://byopkivmy4rkk" path="res://assets/sprites/crops/grass.png" id="1_qxiha"]
+[ext_resource type="Texture2D" uid="uid://djfksoaqkcqs7" path="res://assets/sprites/crops/ground.png" id="2_i1jm3"]
+[ext_resource type="Texture2D" uid="uid://byol681bbevf4" path="res://assets/sprites/crops/soiltile.png" id="3_252at"]
+[ext_resource type="PackedScene" uid="uid://di5j4qsfsh1s1" path="res://scenes/world/House/house.tscn" id="4_qh0kd"]
+[ext_resource type="PackedScene" uid="uid://dgh7exavoppb7" path="res://scenes/player/character_body_2d.tscn" id="5_yr1n6"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l5ull"]
+texture = ExtResource("1_qxiha")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_16fjv"]
+texture = ExtResource("2_i1jm3")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ckp8c"]
+texture = ExtResource("3_252at")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSet" id="TileSet_h7o6m"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_l5ull")
+sources/1 = SubResource("TileSetAtlasSource_16fjv")
+sources/2 = SubResource("TileSetAtlasSource_ckp8c")
 
 [node name="World" type="Node2D" unique_id=222421646]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1062762520]
+tile_map_data = PackedByteArray("AAD0/wEAAQAAAAAAAAD0/wIAAQAAAAAAAAD1/wEAAQAAAAAAAAD1/wIAAQAAAAAAAAD2/wEAAQAAAAAAAAD2/wIAAQAAAAAAAAD3/wEAAQAAAAAAAAD3/wIAAQAAAAAAAAD4/wEAAQAAAAAAAAD4/wIAAQAAAAAAAAD5/wEAAQAAAAAAAAD5/wIAAQAAAAAAAAD6/wEAAQAAAAAAAAD6/wIAAQAAAAAAAAD7/wEAAQAAAAAAAAD7/wIAAQAAAAAAAAD8/wEAAQAAAAAAAAD8/wIAAQAAAAAAAAD9/wEAAQAAAAAAAAD9/wIAAQAAAAAAAAD+/wEAAQAAAAAAAAD+/wIAAQAAAAAAAAD//wEAAQAAAAAAAAD//wIAAQAAAAAAAAAAAAEAAQAAAAAAAAAAAAIAAQAAAAAAAAABAAEAAQAAAAAAAAABAAIAAQAAAAAAAAACAAEAAQAAAAAAAAACAAIAAQAAAAAAAAADAAEAAQAAAAAAAAADAAIAAQAAAAAAAAAEAAEAAQAAAAAAAAAEAAIAAQAAAAAAAAAFAAEAAQAAAAAAAAAFAAIAAQAAAAAAAAAGAAEAAQAAAAAAAAAGAAIAAQAAAAAAAAAHAAEAAQAAAAAAAAAHAAIAAQAAAAAAAAAIAAEAAQAAAAAAAAAIAAIAAQAAAAAAAAAJAAEAAQAAAAAAAAAJAAIAAQAAAAAAAAAKAAEAAQAAAAAAAAAKAAIAAQAAAAAAAAALAAEAAQAAAAAAAAALAAIAAQAAAAAAAAD0/wAAAAAAAAAAAAD1/wAAAAAAAAAAAAD2/wAAAAAAAAAAAAD3/wAAAAAAAAAAAAD4/wAAAAAAAAAAAAD5/wAAAAAAAAAAAAD6/wAAAAAAAAAAAAD7/wAAAAAAAAAAAAD8/wAAAAAAAAAAAAD9/wAAAAAAAAAAAAD+/wAAAAAAAAAAAAD//wAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAACAAAAAAAAAAAAAAADAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAFAAAAAAAAAAAAAAAGAAAAAAAAAAAAAAAHAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAJAAAAAAAAAAAAAAAKAAAAAAAAAAAAAAALAAAAAAAAAAAAAAA=")
 tile_set = SubResource("TileSet_h7o6m")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=235724505]
 
-[node name="SoilTile" parent="." unique_id=579594894 instance=ExtResource("1_5qbjp")]
-position = Vector2(92, 225)
+[node name="Node2D" parent="." unique_id=2004345875 instance=ExtResource("4_qh0kd")]
+position = Vector2(-54, -44)
+scale = Vector2(0.51, 0.51)
+
+[node name="CharacterBody2D" parent="." unique_id=630034284 instance=ExtResource("5_yr1n6")]
+position = Vector2(41, -23)
+scale = Vector2(0.58, 0.58)
