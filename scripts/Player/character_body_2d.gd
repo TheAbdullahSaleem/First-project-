@@ -14,7 +14,8 @@ func _ready() -> void:
 
 	if not $Area2D.area_entered.is_connected(_on_area_2d_area_entered):
 		$Area2D.area_entered.connect(_on_area_2d_area_entered)
-
+	
+	Log.player_node = self
 	if not $Area2D.area_exited.is_connected(_on_area_2d_area_exited):
 		$Area2D.area_exited.connect(_on_area_2d_area_exited)
 

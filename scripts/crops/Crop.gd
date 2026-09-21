@@ -33,13 +33,13 @@ func grow() -> void:
 
 func water_crop() -> void:
 	if is_watered:
-		print("Already watered")
+		Log.player_message("Already watered")
 		return  # already watered today
 	if not Inventory.use_water():
-		print("No water left!")
+		Log.player_message("No water left!")
 		return
 	is_watered = true
-	print("Watering done")
+	Log.player_message("Watering done")
 	# Optional: add a visual tint or water droplet effect here
 
 func harvest() -> void:
