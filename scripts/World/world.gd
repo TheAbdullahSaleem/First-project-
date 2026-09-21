@@ -51,7 +51,6 @@ func spawn_enemy():
 	
 	add_child(enemy)
 	Log.player_message("enemy spawned")
-	
 
 func _on_day_started(day_number: int):
 	$Day.visible = true
