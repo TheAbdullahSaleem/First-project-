@@ -48,6 +48,7 @@ func harvest() -> void:
 		return
 	Inventory.add_seeds(randi_range(2, 3))
 	SignalBus.crop_harvested.emit(crop_data.food_yield)
+	crop_harvested.emit(crop_data.food_yield)
 	
 	queue_free()   # remove crop from world after harvest
 
