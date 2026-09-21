@@ -2,7 +2,7 @@
 extends Node
 
 # Resources the player holds
-var seeds: int = 3
+var seeds: int = 5
 var water: int = 5
 var food: int = 0
 var health: int = 100

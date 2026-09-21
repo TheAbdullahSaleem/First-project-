@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://cfngcvq8stoqx" path="res://assets/sprites/background/day.png" id="8_qh0kd"]
 [ext_resource type="Texture2D" uid="uid://dddf1ux0o80hs" path="res://assets/sprites/background/night.png" id="11_16fjv"]
 [ext_resource type="PackedScene" uid="uid://ceq86drpmqi6w" path="res://scenes/pond.tscn" id="12_ckp8c"]
+[ext_resource type="Texture2D" uid="uid://dyy3w1o32h7h7" path="res://assets/sprites/Board.png" id="15_wryly"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l5ull"]
 texture = ExtResource("1_qxiha")
@@ -194,6 +195,22 @@ default_crop_data = ExtResource("7_252at")
 position = Vector2(216, 8)
 default_crop_data = ExtResource("7_252at")
 
+[node name="SoilTile6" parent="." unique_id=426491734 instance=ExtResource("1_5qbjp")]
+position = Vector2(247, 8)
+default_crop_data = ExtResource("7_252at")
+
+[node name="SoilTile7" parent="." unique_id=1395014027 instance=ExtResource("1_5qbjp")]
+position = Vector2(280, 8)
+default_crop_data = ExtResource("7_252at")
+
+[node name="SoilTile8" parent="." unique_id=2004469036 instance=ExtResource("1_5qbjp")]
+position = Vector2(312, 8)
+default_crop_data = ExtResource("7_252at")
+
+[node name="SoilTile9" parent="." unique_id=1926285348 instance=ExtResource("1_5qbjp")]
+position = Vector2(346, 8)
+default_crop_data = ExtResource("7_252at")
+
 [node name="Day" type="TextureRect" parent="." unique_id=1162393397]
 z_index = -1
 anchors_preset = 15
@@ -259,6 +276,11 @@ texture = ExtResource("11_16fjv")
 [node name="Pond" parent="." unique_id=1382120840 instance=ExtResource("12_ckp8c")]
 position = Vector2(1175.0001, 44)
 scale = Vector2(1.3555555, 1.3555555)
+
+[node name="Board" type="Sprite2D" parent="." unique_id=446210700]
+z_index = -1
+position = Vector2(378, -16)
+texture = ExtResource("15_wryly")
 
 [connection signal="pressed" from="CharacterBody2D/TextureRect2/Button" to="CharacterBody2D/TextureRect2" method="_on_button_pressed"]
 [connection signal="pressed" from="CharacterBody2D/TextureRect2/Button2" to="CharacterBody2D/TextureRect2" method="_on_button_2_pressed"]

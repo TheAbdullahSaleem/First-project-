@@ -15,3 +15,5 @@ func _on_inventory_changed() -> void:
 	label_seeds.text  = "🌱  " + str(Inventory.seeds)
 	label_water.text  = "💧  " + str(Inventory.water)
 	label_food.text   = "🍞  " + str(Inventory.food)
+
+jjjhg
