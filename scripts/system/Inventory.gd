@@ -2,10 +2,8 @@
 extends Node
 
 # Resources the player holds
-var seeds: int = 3
+var seeds: int = 5
 var water: int = 5
-var food: int = 0
-var health: int = 100
 var max_water: int = 15
 
 signal inventory_changed  # UI listens to this
@@ -28,9 +26,6 @@ func use_water() -> bool:
 		return true
 	return false
 
-func add_food(amount: int) -> void:
-	food += amount
-	inventory_changed.emit()
 
 func add_water(amount: int) -> void:
 	if (water + amount) <= max_water:

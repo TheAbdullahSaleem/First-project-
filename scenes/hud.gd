@@ -1,6 +1,5 @@
 extends CanvasLayer
 
-@onready var health_bar = $MarginContainer/VBoxContainer/HealthPanel/HBoxContainer/ProgressBar
 @onready var water_value = $"MarginContainer/VBoxContainer/WaterPanel/HBoxContainer/Water Value"
 @onready var seed_value = $MarginContainer/VBoxContainer/SeedPanel/HBoxContainer/SeedValue
 
