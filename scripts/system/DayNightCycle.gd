@@ -18,11 +18,11 @@ func _process(delta: float) -> void:
 	time_elapsed += delta
 	
 	# Halfway through = sunset
-	if not is_night and time_elapsed >= day_length_seconds * 1 / 3:
+	if not is_night and time_elapsed >= day_length_seconds * 1 / 50:
 		start_night()
 	
 	# midnight for sleep
-	if time_elapsed >= day_length_seconds * 2 / 3:
+	if time_elapsed >= day_length_seconds * 1 / 50:
 		can_sleep = true
 	
 	# Full cycle = new day
