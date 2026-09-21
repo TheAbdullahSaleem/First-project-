@@ -2,7 +2,7 @@
 extends Node
 
 var current_day: int = 1
-var day_length_seconds: float = 180.0   # 3.5 minutes per day
+var day_length_seconds: float = 180.0   # 3 minutes per day
 var time_elapsed: float = 0.0
 var is_night: bool = false
 var can_sleep: bool = false
@@ -18,7 +18,7 @@ func _process(delta: float) -> void:
 	time_elapsed += delta
 	
 	# Halfway through = sunset
-	if not is_night and time_elapsed >= day_length_seconds / 3:
+	if not is_night and time_elapsed >= day_length_seconds * 1 / 3:
 		start_night()
 	
 	# midnight for sleep

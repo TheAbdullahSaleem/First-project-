@@ -48,7 +48,7 @@ func plant_seed() -> void:
 	print("seed planted")
 	
 	# Listen for harvest so we know the crop is gone
-	crop_instance.crop_harvested.connect(_on_crop_harvested)
+	SignalBus.crop_harvested.connect(_on_crop_harvested)
 
 func _on_crop_harvested(_amount: int) -> void:
 	crop_instance = null   # slot is empty again

@@ -8,11 +8,9 @@ extends Node2D
 
 var current_stage: int = 0        # 0 = just planted
 var is_watered: bool = false
-var is_mutated: bool = false
 var days_since_last_growth: int = 0
 
-signal crop_harvested(food_amount: int)
-signal crop_mutated
+signal crop_harvested(amount: int)
 
 func _ready() -> void:
 	add_to_group("crops")
@@ -27,10 +25,6 @@ func on_new_day() -> void:
 		days_since_last_growth = 0
 		is_watered = false   # needs watering again next day
 	
-	# Random mutation chance on day 2+ (if allowed)
-	if current_stage >= 2 and crop_data.can_mutate and not is_mutated:
-		if randf() < 0.15:    # 15% chance
-			mutate()
 
 func grow() -> void:
 	if current_stage < crop_data.crop_stages - 1:
@@ -52,16 +46,10 @@ func harvest() -> void:
 	if current_stage < crop_data.crop_stages - 1:
 		print("Not ready yet!")
 		return
-	Inventory.add_food(crop_data.food_yield)
 	Inventory.add_seeds(randi_range(2, 3))
 	SignalBus.crop_harvested.emit(crop_data.food_yield)
+	
 	queue_free()   # remove crop from world after harvest
-
-func mutate() -> void:
-	is_mutated = true
-	# Change sprite to cursed/black-root version
-	sprite.modulate = Color(0.1, 0.0, 0.1)   # dark purple tint for now
-	crop_mutated.emit()
 
 func update_sprite() -> void:
 	if crop_data and crop_data.stage_textures.size() > current_stage:
@@ -72,16 +60,7 @@ func is_fully_grown() -> bool:
 
 # Called when player presses E near this crop
 func interact() -> void:
-	if is_mutated:
-		show_mutation_choice()
-		return
 	if is_watered || is_fully_grown():
 		harvest()
 	else:
 		water_crop()
-
-func show_mutation_choice() -> void:
-	# You'll connect this to a UI popup later
-	# For now just print — replace with actual dialog
-	print("A black root grows here. [A] Harvest  [B] Destroy  [C] Leave")
-	SignalBus.crop_mutated.emit(self)   # UI listens to show choice dialog
