@@ -63,6 +63,5 @@ func reset() -> void:
 	is_night = false
 	can_sleep = false
 	soil_tiles = []
-=======
-		Log.player_message("Can only sleep after midnight")
->>>>>>> 926be8d6c3c872da02ea61cafa1f680e6a5dd63d
+	
+	Log.player_message("Can only sleep after midnight")
