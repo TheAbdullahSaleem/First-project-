@@ -46,7 +46,6 @@ func harvest() -> void:
 	if current_stage < crop_data.crop_stages - 1:
 		print("Not ready yet!")
 		return
-	Inventory.add_food(crop_data.food_yield)
 	Inventory.add_seeds(randi_range(2, 3))
 	SignalBus.crop_harvested.emit(crop_data.food_yield)
 	
