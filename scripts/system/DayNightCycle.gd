@@ -18,11 +18,11 @@ func _process(delta: float) -> void:
 	time_elapsed += delta
 	
 	# Halfway through = sunset
-	if not is_night and time_elapsed >= day_length_seconds * 1 / 50:
+	if not is_night and time_elapsed >= day_length_seconds * 1 / 3:
 		start_night()
 	
 	# midnight for sleep
-	if time_elapsed >= day_length_seconds * 1 / 50:
+	if time_elapsed >= day_length_seconds * 2 / 3:
 		can_sleep = true
 	
 	# Full cycle = new day
@@ -55,3 +55,11 @@ func skip_night():
 		start_new_day()
 	else:
 		print("Can only sleep after midnight")
+
+## Resets the cycle back to Day 1. Call before starting a New Game.
+func reset() -> void:
+	current_day = 1
+	time_elapsed = 0.0
+	is_night = false
+	can_sleep = false
+	soil_tiles = []

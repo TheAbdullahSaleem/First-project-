@@ -1,18 +1,26 @@
+## main_menu.gd
+## Production-ready entry point for "The Last Harvest".
+## Opens whenever the game is launched; "New Game" resets all state and loads the world.
 extends Control
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass
+const WORLD_SCENE := "res://scenes/world/World.tscn"
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func _ready() -> void:
+	# Ensure the cursor is visible on the menu (may have been hidden in-game)
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 func _on_new_game_pressed() -> void:
-	# Note: Update "res://world.tscn" if your world scene is in a different folder 
-	# (e.g., "res://scenes/world.tscn")
-	get_tree().change_scene_to_file("res://scenes/world/World.tscn")
+	_reset_game_state()
+	get_tree().change_scene_to_file(WORLD_SCENE)
 
-# Be sure to connect your Quit button's pressed() signal to this function!
 func _on_quit_pressed() -> void:
 	get_tree().quit()
+
+# ---------------------------------------------------------------------------
+# Reset all autoload state so every new game starts from a clean slate.
+# ---------------------------------------------------------------------------
+func _reset_game_state() -> void:
+	# Reset day/night cycle
+	DayNightCycle.reset()
+	# Reset inventory
+	Inventory.reset()
