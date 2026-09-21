@@ -3,11 +3,14 @@ extends CharacterBody2D
 
 const SPEED = 50.0
 var target_crop: Node2D = null
-
+var destroy_timer: Timer
 @onready var anim = $Enemy
-
+var allowed = true
 func _ready() -> void:
 	add_to_group("enemy")
+	destroy_timer = Timer.new()
+	add_child(destroy_timer)
+	destroy_timer.timeout.connect(_on_destruction)
 
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
@@ -20,9 +23,10 @@ func _physics_process(delta: float) -> void:
 	
 	if target_crop:
 		var direction_x = sign(target_crop.global_position.x - global_position.x)
-		if global_position.distance_to(target_crop.global_position) < 10.0:
-			target_crop.queue_free()
-			target_crop = null
+		if global_position.distance_to(target_crop.global_position) < 10.0 and allowed:
+			allowed = false
+			destroy_timer.start(3.0)
+			print("Timer started")
 		else:
 			
 			velocity.x = direction_x * SPEED
@@ -63,3 +67,9 @@ func find_nearest_crop():
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body is Player:
 		queue_free()
+
+func _on_destruction():
+	if target_crop:
+		target_crop.queue_free()
+		target_crop = null
+	allowed = true
