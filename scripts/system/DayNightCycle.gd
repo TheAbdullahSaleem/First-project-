@@ -2,10 +2,10 @@
 extends Node
 
 var current_day: int = 1
-var day_length_seconds: float = 210.0   # 3.5 minutes per day
+var day_length_seconds: float = 180.0   # 3.5 minutes per day
 var time_elapsed: float = 0.0
 var is_night: bool = false
-
+var can_sleep: bool = false
 signal day_started(day_number: int)
 signal night_started
 signal day_ended
@@ -18,8 +18,12 @@ func _process(delta: float) -> void:
 	time_elapsed += delta
 	
 	# Halfway through = sunset
-	if not is_night and time_elapsed >= day_length_seconds * 0.01:
+	if not is_night and time_elapsed >= day_length_seconds / 3:
 		start_night()
+	
+	# midnight for sleep
+	if time_elapsed >= day_length_seconds * 2 / 3:
+		can_sleep = true
 	
 	# Full cycle = new day
 	if time_elapsed >= day_length_seconds:
@@ -34,6 +38,7 @@ func start_night() -> void:
 
 func start_new_day() -> void:
 	is_night = false
+	can_sleep = false
 	current_day += 1
 	
 	# Tell all crops to grow
@@ -45,8 +50,8 @@ func start_new_day() -> void:
 	print("Day %d begins." % current_day)
 
 func skip_night():
-	if is_night == true:
+	if is_night and can_sleep:
 		time_elapsed = 0.0
 		start_new_day()
 	else:
-		print("It's daytime")
+		print("Can only sleep after midnight")

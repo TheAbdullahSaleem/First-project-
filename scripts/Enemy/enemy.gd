@@ -25,7 +25,7 @@ func _physics_process(delta: float) -> void:
 		var direction_x = sign(target_crop.global_position.x - global_position.x)
 		if global_position.distance_to(target_crop.global_position) < 10.0 and allowed:
 			allowed = false
-			destroy_timer.start(3.0)
+			destroy_timer.start(2.0)
 			print("Timer started")
 		else:
 			

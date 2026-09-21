@@ -7,7 +7,9 @@ var spawn_timer: Timer
 func _ready() -> void:
 	DayNightCycle.soil_tiles = get_tree().get_nodes_in_group("soil_tiles")
 	$Day.visible = true
+	$Day2.visible = true
 	$Night.visible = false
+	$Night2.visible = false
 	DayNightCycle.night_started.connect(_on_night_started)
 	DayNightCycle.day_started.connect(_on_day_started)
 	
@@ -22,7 +24,7 @@ func _on_spawn_timer_timeout():
 	start_random_timer()
 
 func start_random_timer():
-	spawn_timer.start(randf_range(5.0, 10.0))
+	spawn_timer.start(randf_range(3.0, 5.0))
 
 func _on_night_started():
 	$Night.visible = true
