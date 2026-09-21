@@ -32,4 +32,4 @@ func add_water(amount: int) -> void:
 		water += amount
 		inventory_changed.emit()
 	else:
-		print("Max water storage is 15")
+		Log.player_message("Max water storage is 15")

@@ -16,7 +16,7 @@ func _ready() -> void:
 	for tile in get_tree().get_nodes_in_group("SoilTile"):
 		DayNightCycle.soil_tiles.append(tile)
 
-	print("World ready. Registered %d soil tiles." % DayNightCycle.soil_tiles.size())
+	Log.player_message("World ready. Registered %d soil tiles." % DayNightCycle.soil_tiles.size())
 
 	_setup_camera_limits()
 
@@ -31,9 +31,9 @@ func _setup_camera_limits() -> void:
 		cam.limit_top    = CAM_LIMIT_TOP
 		cam.limit_right  = CAM_LIMIT_RIGHT
 		cam.limit_bottom = CAM_LIMIT_BOTTOM
-		print("Camera limits set: %d %d %d %d" % [CAM_LIMIT_LEFT, CAM_LIMIT_TOP, CAM_LIMIT_RIGHT, CAM_LIMIT_BOTTOM])
+		Log.player_message("Camera limits set: %d %d %d %d" % [CAM_LIMIT_LEFT, CAM_LIMIT_TOP, CAM_LIMIT_RIGHT, CAM_LIMIT_BOTTOM])
 	else:
-		print("No Camera2D found in scene.")
+		Log.player_message("No Camera2D found in scene.")
 
 # Recursively search for a Camera2D node
 func _find_camera(node: Node) -> Camera2D:

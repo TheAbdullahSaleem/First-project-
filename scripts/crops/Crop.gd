@@ -44,7 +44,7 @@ func water_crop() -> void:
 
 func harvest() -> void:
 	if current_stage < crop_data.crop_stages - 1:
-		print("Not ready yet!")
+		Log.player_message("Not ready yet!")
 		return
 	Inventory.add_seeds(randi_range(2, 3))
 	SignalBus.crop_harvested.emit(crop_data.food_yield)

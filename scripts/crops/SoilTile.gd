@@ -29,11 +29,11 @@ func interact() -> void:
 func till_soil() -> void:
 	is_tilled = true
 	sprite.texture = tilled_texture
-	print("Soil tilled")
+	Log.player_message("Soil tilled")
 
 func plant_seed() -> void:
 	if not Inventory.use_seed():
-		print("No seeds!")
+		Log.player_message("No seeds!")
 		return
 	
 	crop_instance = CROP_SCENE.instantiate()
@@ -45,7 +45,7 @@ func plant_seed() -> void:
 
 	add_child(crop_instance)
 	
-	print("seed planted")
+	Log.player_message("seed planted")
 	
 	# Listen for harvest so we know the crop is gone
 	crop_instance.crop_harvested.connect(_on_crop_harvested)

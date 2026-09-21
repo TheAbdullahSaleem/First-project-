@@ -50,7 +50,7 @@ func spawn_enemy():
 	enemy.global_position = Vector2(spawn_x, spawn_y)
 	
 	add_child(enemy)
-	print("enemy spawned")
+	Log.player_message("enemy spawned")
 	
 
 func _on_day_started(day_number: int):

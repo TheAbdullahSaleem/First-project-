@@ -34,7 +34,7 @@ func _process(delta: float) -> void:
 func start_night() -> void:
 	is_night = true
 	night_started.emit()
-	print("Night has begun. Something is coming...")
+	Log.player_message("Night has begun. Something is coming...")
 
 func start_new_day() -> void:
 	is_night = false
@@ -47,11 +47,11 @@ func start_new_day() -> void:
 	
 	day_started.emit(current_day)
 	day_ended.emit()
-	print("Day %d begins." % current_day)
+	Log.player_message("Day %d begins." % current_day)
 
 func skip_night():
 	if is_night and can_sleep:
 		time_elapsed = 0.0
 		start_new_day()
 	else:
-		print("Can only sleep after midnight")
+		Log.player_message("Can only sleep after midnight")
