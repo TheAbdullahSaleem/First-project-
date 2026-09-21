@@ -34,7 +34,7 @@ func _process(delta: float) -> void:
 func start_night() -> void:
 	is_night = true
 	night_started.emit()
-	print("Night has begun. Something is coming...")
+	Log.player_message("Night has begun. Something is coming...")
 
 func start_new_day() -> void:
 	is_night = false
@@ -47,13 +47,14 @@ func start_new_day() -> void:
 	
 	day_started.emit(current_day)
 	day_ended.emit()
-	print("Day %d begins." % current_day)
+	Log.player_message("Day %d begins." % current_day)
 
 func skip_night():
 	if is_night and can_sleep:
 		time_elapsed = 0.0
 		start_new_day()
 	else:
+<<<<<<< HEAD
 		print("Can only sleep after midnight")
 
 ## Resets the cycle back to Day 1. Call before starting a New Game.
@@ -63,3 +64,6 @@ func reset() -> void:
 	is_night = false
 	can_sleep = false
 	soil_tiles = []
+=======
+		Log.player_message("Can only sleep after midnight")
+>>>>>>> 926be8d6c3c872da02ea61cafa1f680e6a5dd63d

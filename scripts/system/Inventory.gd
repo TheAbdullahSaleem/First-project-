@@ -32,6 +32,7 @@ func add_water(amount: int) -> void:
 		water += amount
 		inventory_changed.emit()
 	else:
+<<<<<<< HEAD
 		print("Max water storage is 15")
 
 ## Resets inventory to starting defaults. Call before starting a New Game.
@@ -39,3 +40,6 @@ func reset() -> void:
 	seeds = 5
 	water = 5
 	inventory_changed.emit()
+=======
+		Log.player_message("Max water storage is 15")
+>>>>>>> 926be8d6c3c872da02ea61cafa1f680e6a5dd63d
