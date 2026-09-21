@@ -54,7 +54,6 @@ func skip_night():
 		time_elapsed = 0.0
 		start_new_day()
 	else:
-<<<<<<< HEAD
 		print("Can only sleep after midnight")
 
 ## Resets the cycle back to Day 1. Call before starting a New Game.
