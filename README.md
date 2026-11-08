@@ -4,7 +4,7 @@
 
 > A top-down pixel-art survival game about farming, resource management, and the consequences of what you choose to harvest.
 
-## 🎮 About the Game
+##  About the Game
 
 **The Last Harvest** is a 2D top-down survival and farming game built around a simple question:
 
@@ -22,7 +22,7 @@ But be careful.
 
 ---
 
-## 🌾 Core Gameplay
+##  Core Gameplay
 
 The game combines a few simple mechanics:
 
@@ -40,7 +40,7 @@ The goal is to keep the mechanics simple while making the player's decisions mea
 
 ---
 
-# 📖 Game Structure
+#  Game Structure
 
 ## Day 1 — The Arrival
 
@@ -48,9 +48,9 @@ You arrive at the farm with limited supplies.
 
 ### Starting Resources
 
-- 🌱 Seeds ×3
-- 💧 Water ×5
-- ❤️ Health: 100%
+-  Seeds ×3
+-  Water ×5
+-  Health: 100%
 
 ### Objective
 
@@ -80,7 +80,7 @@ You must protect the farm until morning.
 
 ---
 
-# 🌱 Day 2 — Something Has Changed
+#  Day 2 — Something Has Changed
 
 The farm looks different.
 
@@ -122,7 +122,7 @@ Your decisions affect what happens later in the game.
 
 ---
 
-# 🎮 Controls
+#  Controls
 
 | Key | Action |
 |-----|--------|
